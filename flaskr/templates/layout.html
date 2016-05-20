@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+<title>{{ g.user.nickname }}'s Blog</title>
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static',filename='style.css') }}">
+</head>
+<style>
+.div-c{ float:left;}
+.div-d{ float:right;}
+</style>
+<body>
+<div class="page">
+    <h1>{{ g.title }}</h1></br>
+    <table class="right">
+        <tr>
+            <td>
+                {% if session.logged_in %}
+                <form style="display: inline" action="{{ url_for('search') }}" method="post" name="search">
+                    {{ g.search_form.hidden_tag() }}
+                    {{ g.search_form.search(size=12) }}
+                    <input type="submit" value="Search" class="div-d">
+                </form>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+        <td>
+            {% if not session.logged_in %}
+                <div class="div-d">
+                | <a href="{{ url_for('login') }}">Log in</a>
+                | <a href="{{ url_for('signup') }}">Sign up</a>|
+                </div>
+            {% else %}
+                <div class="div-d">
+                    | <a href="{{ url_for('index') }}">Feeds</a>
+                    | <a href="{{ url_for('viewposts.add_post') }}">Status</a>
+                    | <a href="{{ url_for('user',email=g.user.email) }}">Profile</a>
+                    | <a href="{{ url_for('logout') }}">Logout</a>
+                </div><br />
+            {% endif %}
+        </td>
+        </tr>
+    </table><br />
+<br>
+    <p>
+    {% for message in get_flashed_messages() %}
+        <br><div class="flash">{{ message }}</div>
+    {% endfor %}
+    </p>
+<div>{% block body %}{% endblock %}</div>
+<div>{% include 'providers.html' %}</div>
+</div>
+</body>
+</html>

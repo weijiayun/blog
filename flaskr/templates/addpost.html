@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% if session.logged_in %}
+<form action="{{ url_for('.add_post') }}" method="post" class="add-entry">
+    <table align="center">
+        <tr><td>Title:</td></tr>
+        <tr><td><input type="text" name="title" size="30" maxlength="60"></td></tr>
+        <tr><td>Status:</td></tr>
+        <tr>
+            <td><textarea name="text" rows="8" cols="44" maxlength="500" ></textarea></td>
+        </tr>
+        <tr><td><input type="submit" value="Share" /></tr>
+    </table>
+</form>
+{% endif %}
+{% endblock %}

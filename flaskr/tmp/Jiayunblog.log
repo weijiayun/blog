@@ -1,0 +1,33 @@
+2016-05-08 13:48:33,780 INFO: microblog startup [in /home/weijiayun/PycharmProjects/flaskProj/runserver.py:41]
+2016-05-08 13:48:50,894 ERROR: Exception on /add [POST] [in /home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/weijiayun/PycharmProjects/flaskProj/flaskr/entries.py", line 21, in add_entry
+    [request.form['title'],request.form['text']])
+OperationalError: no such table: entries
+2016-05-08 13:53:14,449 INFO: microblog startup [in /home/weijiayun/PycharmProjects/flaskProj/runserver.py:41]
+2016-05-08 13:53:28,486 ERROR: Exception on /add [POST] [in /home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/weijiayun/project/python/microblog/flask/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/weijiayun/PycharmProjects/flaskProj/flaskr/entries.py", line 21, in add_entry
+    [request.form['title'],request.form['text']])
+OperationalError: no such table: entries
+2016-05-08 13:54:37,595 INFO: microblog startup [in /home/weijiayun/PycharmProjects/flaskProj/runserver.py:41]

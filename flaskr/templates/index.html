@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+<div>
+{% block body %}
+    <div>
+        {% if session.logged_in %}
+            <ul class="entries">
+                {% for post in posts %}
+                    {% include 'post.html' %}
+                {% else %}
+                    <li><em>Unbelievable. No entries so far here</em>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}
+</div>

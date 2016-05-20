@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+    {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
+    {% endif %}
+    <form action="{{ url_for('login') }}" method="post" class="entries">
+        {{ form.hidden_tag() }}
+        <dl>
+            <dt><b>Your email:</b>
+            <li><input type="text" name="email" size="20"/></li>
+            <dt><b>Your password:</b>
+            <li><input type="password" name="password" size="20"/></li>
+            <li>{{ form.remember_me }} Remeber Me</li>
+            <li><input type="submit" value="Login"/></li>
+        </dl>
+    </form>
+{% endblock %}

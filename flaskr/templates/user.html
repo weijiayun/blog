@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <br>
+    <table>
+    <tr valign="top">
+    <th>
+        <th><img src="{{user.avatar(128)}}"></th>
+        <td>
+            <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
+            {% if user.about_me %}Description: <i>{{ user.about_me }}</i>{% endif %}
+            {% if user.last_seen %}<p>Last seen on: <i>{{ user.last_seen }}</i></p>{% endif %}
+            <p>{{ user.followers.count() }} followers |
+                {% if user.id == g.user.id %}
+                    <a href="{{url_for('edit')}}">Edit</a> |
+                {% elif not g.user.is_following(user) %}
+                    <a href="{{ url_for('follow',email=user.email) }}">Follow</a>
+                {% else %}
+                    <a href="{{ url_for('unfollow',email=user.email) }}">Unfollow</a> |
+                    {% if g.user.is_rejecting(user) %}
+                        <a href="{{ url_for('unreject',email=user.email) }}">Unreject</a>
+                    {% else %}
+                        <a href="{{ url_for('reject',email=user.email) }}">Reject</a> |
+                    {% endif %}
+                {% endif %}
+            </p>
+
+        </td>
+    </th>
+    </tr>
+    </table>
+    <hr color=#987cb9 size="5">
+{% for post in posts %}
+    {% include 'post.html' %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+    {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
+    {% endif %}
+    <form action="{{ url_for('signup') }}" method="post" class="entries">
+        <dl>
+            <dt><b>Username:</b>
+            <li><input type="text" name="username" size="20" value="{{ tmpNickname }}"></li>
+            <dt><b>Email:</b>
+            <li><input type="text" name="email" size="20"/></li>
+            <dt><b>Password:</b>
+            <li><input type="password" name="password1" size="20"/></li>
+            <dt><b>Confirm Password:</b>
+            <li><input type="password" name="password2" size="20"/></li>
+            <li><input type="submit" value="Sign up"/></li>
+        </dl>
+    </form>
+{% endblock %}
