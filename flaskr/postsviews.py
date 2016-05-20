@@ -1,8 +1,12 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
 from flaskr import models,db
 from datetime import datetime
-from config import OPENID_PROVIDERS
-from forms import PostForm
+OPENID_PROVIDERS = [
+    { 'img': '/static/img/google.png', 'url': 'https://www.google.com/' },
+    { 'img': '/static/img/yahoo.png', 'url': 'https://www.yahoo.com' },
+    {'img':'/static/img/sjtu.png','url':'http://www.sjtu.edu.cn'},
+    {'img':'/static/img/wechat.png','url':'http://www.wechat.com'}
+    ]
 
 #all the import
 

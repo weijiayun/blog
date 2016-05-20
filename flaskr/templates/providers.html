@@ -1,3 +1,3 @@
-<br>|{% for pr in providers %}
-    <a href="{{ pr.url }}">{{ pr.name }}</a> |
+<br>{% for pr in providers %}
+    <a href="{{ pr.url }}"><img src="{{ pr.img }}"></a>
 {% endfor %}

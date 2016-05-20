@@ -1,9 +1,9 @@
 {% extends 'layout.html' %}
-<div>
 {% block body %}
-    <div>
+    <br>
+    <div class="center">
         {% if session.logged_in %}
-            <ul class="entries">
+            <ul class="center">
                 {% for post in posts %}
                     {% include 'post.html' %}
                 {% else %}
@@ -13,4 +13,3 @@
         {% endif %}
     </div>
 {% endblock %}
-</div>

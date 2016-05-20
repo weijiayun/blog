@@ -1,15 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
     <br>
-    <table>
-    <tr valign="top">
-    <th>
-        <th><img src="{{user.avatar(128)}}"></th>
-        <td>
-            <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
-            {% if user.about_me %}Description: <i>{{ user.about_me }}</i>{% endif %}
-            {% if user.last_seen %}<p>Last seen on: <i>{{ momentjs(user.last_seen).calendar()}}</i></p>{% endif %}
-            <p>{{ user.followers.count() }} followers |
+    <table class="center">
+    <tr valign="top-left">
+        <td><img src="{{user.avatar(128)}}"></td>
+        <td class="left">
+        <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
+            {% if user.about_me %}Description: <i>{{ user.about_me }}</i><br/>{% endif %}
+            {% if user.last_seen %}Last seen on: <i>{{ momentjs(user.last_seen).calendar() }}</i><br />{% endif %}
+            <p><b>{{ user.followers.count() }}<b /> followers |
                 {% if user.id == g.user.id %}
                     <a href="{{url_for('edit')}}">Edit</a> |
                 {% elif not g.user.is_following(user) %}
@@ -23,13 +22,16 @@
                     {% endif %}
                 {% endif %}
             </p>
-
         </td>
-    </th>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            {% for post in posts %}
+                {% include 'post.html' %}
+            {% endfor %}
+        </td>
     </tr>
     </table>
-    <hr color=#988cb9 size="3">
-{% for post in posts %}
-    {% include 'post.html' %}
-{% endfor %}
+{#    <hr color=#988cb9 size="3">#}
 {% endblock %}

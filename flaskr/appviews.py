@@ -22,9 +22,8 @@ def befort_request():
     g.search_form=SearchForm()
     g.user=models.User(nickname="",password="",email="")
     g.user=current_user
-    # g.user.last_seen=datetime.utcnow()
-    # db.session.add(g.user)
-    # db.session.commit()
+    g.user.last_seen=datetime.utcnow()
+
 
 
 @lm.user_loader
@@ -57,7 +56,7 @@ def index():
     g.search_form=SearchForm()
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-    g.title = "{0}'s Microblog".format(g.user.nickname)
+    g.title = "Microblog"#.format(g.user.nickname)
     cur=g.user.followed_posts()
     return render_template('index.html',
                            posts=cur,
@@ -272,16 +271,15 @@ def addcomment(postid):
     if request.method=="POST":
         if topost is None:
             flash(topost.title + ' is not exits!')
-            return redirect(request.referrer)
+            return redirect(url_for('index'))
         u=models.Comment(body=request.form['comment'],byuser=g.user,topost=topost,timestamp=datetime.utcnow())
         if u is None:
             flash('Connot make a comment to {}'.format(topost.title))
-            return redirect(request.referrer)
+            return redirect(url_for(index))
         db.session.add(u)
         db.session.commit()
         g.title='Comment'
-        return redirect(request.referrer)
-    comments=topost.comments.all()
+        return redirect(url_for('index'))
     return render_template('addcomment.html',
                            post=topost,
                            providers=app.config['OPENID_PROVIDERS'])

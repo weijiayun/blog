@@ -7,10 +7,10 @@ SECRET_KEY = 'you-will-never-guess'
 WHOOSH_BASE=os.path.join(basedir,'search.db')
 MAX_SEARCH_RESULTS=50
 OPENID_PROVIDERS = [
-    { 'name': 'Google', 'url': 'https://www.google.com/' },
-    { 'name': 'Yahoo', 'url': 'https://me.yahoo.com' },
-    {'name':'SJTU','url':'http://www.sjtu.edu.cn'},
-    {'name':'Wechat','url':'http://www.wechat.com'}
+    { 'img': '/static/img/google.png', 'url': 'https://www.google.com/' },
+    { 'img': '/static/img/yahoo.png', 'url': 'https://www.yahoo.com' },
+    {'img':'/static/img/sjtu.png','url':'http://www.sjtu.edu.cn'},
+    {'img':'/static/img/wechat.png','url':'http://www.wechat.com'}
     ]
 SQLALCHEMY_TRACK_MODIFICATIONS=True
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'database/flaskr.db')

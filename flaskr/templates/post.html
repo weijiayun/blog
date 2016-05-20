@@ -1,30 +1,31 @@
 <br>
 <table>
     <tr valign="top">
-        <th class="top-left"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></th>
-        <td>
-            <h2><a href="{{ url_for('user',email=post.author.email) }}">{{post.author.nickname}}</a></h2>
-            <p>
+        <td class="top-left"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></td>
+        <td class="top">
+            <h4><a href="{{ url_for('user',email=post.author.email) }}">{{post.author.nickname}}</a></h4>
+            <b>
                 <b>Label: </b>{{ post.title }}
                 | <a href="{{ url_for('like',postid=post.id)}}">Like</a>+{{post.likes.count()}} |
                 <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
                 {% if g.user==post.author %}
                     <a href="{{ url_for('delpost',postid=post.id)}}">delete</a> |
                 {% endif %}
-            </p>
+            </b>
         </td>
     </tr>
     <tr>
         <td></td>
         <td>
             <b>Says: </b>{{ post.body }}<br />
-            <i style="font-size: small;">@{{post.timestamp}}</i>
+            <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
         </td>
     </tr>
     {% if post.comments.count()>0%}
     <tr>
-        <td></td>
-        <td><hr color=#987cb9 size="2">
+        <th></th>
+{#        <td><hr color="red" size="2">#}
+        <td>
         {% for cmt in post.comments.all() %}
                 <table>
                     <tr>
@@ -33,7 +34,7 @@
                         </td>
                         <td>
                             {{ cmt.body }}
-                            <br><i style="font-size: xx-small;">@{{ cmt.timestamp }}</i>
+                            <br><i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i>
                         </td>
                     </tr>
                 </table>
@@ -42,4 +43,4 @@
     </tr>
 {% endif %}
 </table>
-<hr color=#987cb9 size="3.5">
+{#<hr color=#987cb9 size="3.5">#}
