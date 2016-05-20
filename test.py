@@ -1,6 +1,6 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
 import os,unittest
-from flaskr.models import User,Post,Comment
+from flaskr.models import User,Post,Comment,Like
 from config import basedir
 from flaskr import app,db
 from flaskr.appviews import uniqueMail
@@ -122,6 +122,15 @@ class TestCase(unittest.TestCase):
         p4 = Post(body = "post from david", author = u4, timestamp =utcnow + timedelta(seconds = 4))
         c1=Comment(body="it's amazing!!!",byuser=u2,topost=p1,timestamp=utcnow + timedelta(seconds = 5))
         pc=p1.comments.all()
+        L1 = Like(is_like=True, topost=p1, byuser=u2)
+        L2 = Like(is_like=True, topost=p1, byuser=u1)
+        db.session.add(L1)
+        db.session.add(L2)
+        db.session.commit()
+        print p1.likes.count()
+        lp1=p1.likes.all()
+        print lp1[0].byuser.nickname
+        print lp1[1].byuser.nickname
         print pc
         print pc[0].body
         u2c=u2.comments.all()

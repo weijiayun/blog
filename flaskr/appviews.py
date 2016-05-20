@@ -87,7 +87,6 @@ def login():
                 session['crtUser']=userID
                 session['logged_in']=True
                 remember_me = form.remember_me.data
-                print remember_me
                 login_user(user,remember=remember_me)
                 flash('You were logged in successfully')
                 return redirect(url_for('index'))
@@ -286,6 +285,25 @@ def addcomment(postid):
     return render_template('addcomment.html',
                            post=topost,
                            providers=app.config['OPENID_PROVIDERS'])
+
+@app.route('/like/<postid>')
+@login_required
+def like(postid):
+    post = models.Post.query.get(postid)
+    if post is None:
+        flash('Post {} not found'.format(post.title))
+        return redirect(url_for('index'))
+    likers={lk.byuser.email:lk.id for lk in post.likes.all()}
+    if g.user.email in likers.keys():
+        db.session.delete(models.Like.query.get(likers[g.user.email]))
+    else:
+        lk=models.Like(is_like=True,byuser=g.user,topost=post)
+        if lk is None:
+            flash('sorry! you cannot like the post')
+            return redirect(url_for('index'))
+        db.session.add(lk)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 #############custom http error######################
 @app.errorhandler(404)

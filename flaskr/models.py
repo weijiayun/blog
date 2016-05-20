@@ -25,7 +25,8 @@ class User(db.Model):
     email = db.Column(db.String(120), index = True, unique = True)
     password=db.Column(db.String(20))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
-    comments=db.relationship('Comment',backref='byuser',lazy='dynamic')
+    comments = db.relationship('Comment', backref='byuser', lazy='dynamic')
+    likes = db.relationship('Like', backref='byuser', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
     followed = db.relationship('User',
@@ -107,6 +108,7 @@ class Post(db.Model):
     body = db.Column(db.String(1400))
     timestamp = db.Column(db.DateTime)
     comments = db.relationship('Comment', backref='topost', lazy='dynamic')
+    likes = db.relationship('Like', backref='topost', lazy='dynamic')
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
 
     def __repr__(self):
@@ -121,6 +123,13 @@ class Comment(db.Model):
 
     def __repr__(self):
         return '<Comment %r>' % (self.body)
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    is_like=db.column(db.Boolean(False))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    def __repr__(self):
+        return '<Like %r>' % (self.is_like)
 
 if enable_search:
     whooshalchemy.whoosh_index(app,Post)

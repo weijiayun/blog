@@ -1,15 +1,13 @@
 {% extends 'layout.html' %}
 {% block body %}
 {% if session.logged_in %}
-<form action="{{ url_for('.addcomment',postid=post.id) }}" method="post" class="add-entry">
-    <table align="center">
-        <tr><td>{% include 'post.html' %}</td></tr>
-        <tr><td>Comment:</td></tr>
-        <tr>
-            <td><textarea name="comment" rows="4" cols="44" maxlength="140" ></textarea></td>
-        </tr>
-        <tr><td><input type="submit" value="Share" /></tr>
-    </table>
-</form>
+    <div>{% include 'post.html' %}</div>
+    <div>
+        <form action="{{ url_for('.addcomment',postid=post.id) }}" method="post" class="add-entry">
+            Comment:<br/>
+            <textarea name="comment" rows="4" cols="44" maxlength="140" ></textarea><br/>
+            <input type="submit" value="Share" />
+        </form>
+    </div>
 {% endif %}
 {% endblock %}

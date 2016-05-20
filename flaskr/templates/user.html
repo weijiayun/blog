@@ -8,7 +8,7 @@
         <td>
             <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
             {% if user.about_me %}Description: <i>{{ user.about_me }}</i>{% endif %}
-            {% if user.last_seen %}<p>Last seen on: <i>{{ user.last_seen }}</i></p>{% endif %}
+            {% if user.last_seen %}<p>Last seen on: <i>{{ momentjs(user.last_seen).calendar()}}</i></p>{% endif %}
             <p>{{ user.followers.count() }} followers |
                 {% if user.id == g.user.id %}
                     <a href="{{url_for('edit')}}">Edit</a> |
@@ -28,7 +28,7 @@
     </th>
     </tr>
     </table>
-    <hr color=#987cb9 size="5">
+    <hr color=#988cb9 size="3">
 {% for post in posts %}
     {% include 'post.html' %}
 {% endfor %}

@@ -3,9 +3,10 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 import re
 from flask.ext.mail import Mail
-
+from momentjs import momentjs
 app=Flask(__name__)
 app.config.from_object('config')
+
 ################mail setting#####
 mail=Mail(app)
 ######sql initialize#############
@@ -26,6 +27,7 @@ re_password_str=re.compile(r'\w{6,16}')
 re_uppercase=re.compile(r'[A-Z]+')
 re_number=re.compile(r'[0-9]+')
 ###################import py pacage member
+app.jinja_env.globals['momentjs']=momentjs
 import appviews,forms,models,postsviews
 
 
