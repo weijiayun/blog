@@ -32,6 +32,7 @@ from flaskr import db
     # for postpiece in jposts:
     #     print postpiece.id,postpiece.author.nickname,postpiece.body
 print 'git on another me'
+print 'git on another me'
 from flask.ext.mail import Message
 from flaskr import mail,app
 from config import ADMINS
