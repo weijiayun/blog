@@ -1,10 +1,13 @@
 from flask import Flask
+from werkzeug.contrib.fixers import ProxyFix
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 import re
 from flask.ext.mail import Mail
 from momentjs import momentjs
+
 app=Flask(__name__)
+app.wsgi_app=ProxyFix(app.wsgi_app)
 app.config.from_object('config')
 
 ################mail setting#####
