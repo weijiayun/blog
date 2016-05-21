@@ -2,13 +2,13 @@
 {% block body %}
     <br>
     <table class="center">
-    <tr valign="top-left">
+    <tr valign="top">
         <td><img src="{{user.avatar(128)}}"></td>
         <td class="left">
         <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
             {% if user.about_me %}Description: <i>{{ user.about_me }}</i><br/>{% endif %}
             {% if user.last_seen %}Last seen on: <i>{{ momentjs(user.last_seen).calendar() }}</i><br />{% endif %}
-            <p><b>{{ user.followers.count() }}<b /> followers |
+            <p><b>{{ user.followers.count() }}</b> followers |
                 {% if user.id == g.user.id %}
                     <a href="{{url_for('edit')}}">Edit</a> |
                 {% elif not g.user.is_following(user) %}
@@ -23,6 +23,7 @@
                 {% endif %}
             </p>
         </td>
+
     </tr>
     <tr>
         <td></td>
@@ -34,4 +35,17 @@
     </tr>
     </table>
 {#    <hr color=#988cb9 size="3">#}
+{% endblock %}
+{% block bodyright %}
+    <div class="right">
+    <table align="right">
+    {% for foo in g.user.Followeds() %}
+        <tr align="right">
+            <td>
+                <a href="{{ url_for('user',email=foo.email) }}"><img src="{{foo.avatar(24)}}"> {{foo.nickname }}</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    </div>
 {% endblock %}

@@ -24,11 +24,12 @@ class User(db.Model):
     nickname = db.Column(db.String(64))
     email = db.Column(db.String(120), index = True, unique = True)
     password=db.Column(db.String(20))
+    about_me = db.Column(db.String(140))
+    last_seen = db.Column(db.DateTime)
+
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     comments = db.relationship('Comment', backref='byuser', lazy='dynamic')
     likes = db.relationship('Like', backref='byuser', lazy='dynamic')
-    about_me = db.Column(db.String(140))
-    last_seen = db.Column(db.DateTime)
     followed = db.relationship('User',
         secondary = followers,
         primaryjoin = (followers.c.follower_id == id),
@@ -68,8 +69,15 @@ class User(db.Model):
         if self.is_following(user):
             self.followed.remove(user)
             return self
+
     def is_following(self,user):
         return self.followed.filter(followers.c.followed_id==user.id).count()>0
+
+    def Followeds(self):
+        return self.followed.all()
+
+    def Followers(self):
+        return self.followers.all()
 
     def reject(self,user):
         if self.is_following(user):
@@ -111,6 +119,10 @@ class Post(db.Model):
     likes = db.relationship('Like', backref='topost', lazy='dynamic')
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
 
+    def OutLikers(self):
+        likes=self.likes.order_by(Like.timestamp.desc()).all()
+        return (i.byuser for i in likes)
+
     def __repr__(self):
         return '<Post %r>' % (self.body)
 
@@ -126,6 +138,7 @@ class Comment(db.Model):
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     is_like=db.column(db.Boolean(False))
+    timestamp = db.Column(db.DateTime)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):

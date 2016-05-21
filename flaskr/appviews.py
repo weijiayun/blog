@@ -24,8 +24,6 @@ def befort_request():
     g.user=current_user
     g.user.last_seen=datetime.utcnow()
 
-
-
 @lm.user_loader
 def load_user(id):
     return models.User.query.get(int(id))
@@ -33,9 +31,11 @@ def load_user(id):
 @app.route('/search',methods=['POST'])
 @login_required
 def search():
-    if not g.search_form.validate_on_submit():
-        return redirect(url_for('index'))
-    return redirect(url_for('search_results',query=g.search_form.search.data))
+    if request.method=="POST":
+        if session.get('logged_in'):
+            return redirect(url_for('search_results', query=request.form['search']))
+    return redirect(url_for('index'))
+
 
 @app.route('/search_results/<query>')
 @login_required
@@ -79,7 +79,7 @@ def login():
         else:
             userindex = userlist.index(request.form['email'])
             userID=usersInfo[userindex]['ID']
-            user=models.User.query.get(userID)
+            user=load_user(userID)
             if request.form['password']!=usersInfo[userindex]['password']:
                 error='The Password Cannot Match The Account'
             else:
@@ -262,7 +262,7 @@ def delpost(postid):
     if user == g.user:
         db.session.delete(post)
         db.session.commit()
-        flash('You are delete' + post.title)
+        flash('You Have Deleted ' + post.title)
     return redirect(request.referrer)
 
 @app.route('/addcomment/<postid>',methods=['GET','POST'])
@@ -280,7 +280,7 @@ def addcomment(postid):
         db.session.add(u)
         db.session.commit()
         g.title='Comment'
-        return redirect(request.referer)
+        return redirect(request.referrer)
     return render_template('addcomment.html',
                            post=topost,
                            providers=app.config['OPENID_PROVIDERS'])
@@ -296,13 +296,22 @@ def like(postid):
     if g.user.email in likers.keys():
         db.session.delete(models.Like.query.get(likers[g.user.email]))
     else:
-        lk=models.Like(is_like=True,byuser=g.user,topost=post)
+        lk=models.Like(is_like=True,byuser=g.user,topost=post,timestamp=datetime.utcnow())
         if lk is None:
             flash('sorry! you cannot like the post')
             return redirect(request.referrer)
         db.session.add(lk)
     db.session.commit()
     return redirect(request.referrer)
+# @app.route('/likers/<postid>')
+# @login_required
+# def likers(postid):
+#     post = models.Post.query.get(postid)
+#     if post is None:
+#         flash('Post {} not found'.format(post.title))
+#         return redirect(request.referrer)
+#
+#     return redirect(request.referrer)
 
 #############custom http error######################
 @app.errorhandler(404)

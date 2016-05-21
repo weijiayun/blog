@@ -5,14 +5,12 @@
     <script src="/static/js/moment.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="/static/style.css">
-
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
 
 </head>
-
 <body>
 <div class="page">
     <h1>{{ g.title }}</h1></br>
@@ -21,40 +19,49 @@
             <td></td>
             <td class="right">
             {% if session.logged_in %}
-                <form style="display: inline" action="{{ url_for('search') }}" method="post" name="search">
-                    {{ g.search_form.hidden_tag()}}
-                    {{ g.search_form.search(size=8)}}<input type="submit" value="Search" >
+                <form action="{{ url_for('search') }}" method="post">
+                    <table>
+                        <tr valign="top">
+                            <td><input type="text" name="search" style="height:27px" /></td>
+                            <td><button type="submit"style="height: 26px;" class="top">Search</button></td>
+                        </tr>
+                    </table>
                 </form>
             {% endif %}
             </td>
-
         </tr>
         <tr>
         <td></td>
         <td>
             {% if not session.logged_in %}
-                <div class="right">
+                <b class="right">
                 | <a href="{{ url_for('login') }}">Log in</a>
                 | <a href="{{ url_for('signup') }}">Sign up</a>|
-                </div>
+                </b>
             {% else %}
-                <div class="right">
+                <b class="right">
                     | <a href="{{ url_for('index') }}">Feeds</a>
                     | <a href="{{ url_for('viewposts.add_post') }}">Status</a>
                     | <a href="{{ url_for('user',email=g.user.email) }}">Profile</a>
                     | <a href="{{ url_for('logout') }}">Logout</a> |
-                </div><br />
+                </b><br />
             {% endif %}
         </td>
         </tr>
-    </table><br />
-<br>
-    <p>
+    </table>
+<br><br><br><br><br>
     {% for message in get_flashed_messages() %}
-        <br><div class="flash">{{ message }}</div>
+       <div class="flash"><p>{{ message }}</p></div>
     {% endfor %}
-    </p>
-<div class="center">{% block body %}{% endblock %}</div>
+
+
+<table>
+<tr>
+    <td>{% block body %}{% endblock %}</td>
+    <td>{% block bodyright %}{% endblock %}</td>
+</tr>
+</table>
+
 <br>
 <br>
 <br>

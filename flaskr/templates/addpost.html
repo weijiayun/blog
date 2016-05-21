@@ -1,16 +1,18 @@
 {% extends 'layout.html' %}
 {% block body %}
-{% if session.logged_in %}
-<form action="{{ url_for('.add_post') }}" method="post" class="add-entry">
-    <table>
-        <tr><td><br>Title:</td></tr>
-        <tr><td><input type="text" name="title" size="30" maxlength="60"></td></tr>
-        <tr><td>Status:</td></tr>
-        <tr>
-            <td><textarea name="text" rows="8" cols="44" maxlength="500" ></textarea></td>
-        </tr>
-        <tr><td><input type="submit" value="Share" /></tr>
-    </table>
-</form>
-{% endif %}
+    <div class="center">
+    {% if session.logged_in %}
+    <form action="{{ url_for('.add_post') }}" method="post" class="add-entry" about="">
+        <table>
+            <tr><td><br>Title:</td></tr>
+            <tr><td><input type="text" name="title" maxlength="60" style="height: 30px"></td></tr>
+            <tr><td>Status:</td></tr>
+            <tr>
+                <td><textarea name="text" rows="4" style="width:300px" maxlength="500" ></textarea></td>
+            </tr>
+            <tr><td><button type="submit">Share</button></td></tr>
+        </table>
+    </form>
+    {% endif %}
+    </div>
 {% endblock %}

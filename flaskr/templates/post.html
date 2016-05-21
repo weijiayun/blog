@@ -1,17 +1,19 @@
 <br>
+<script>
+    function toggle() {
+        theObj=document.getElementById('expand').style;
+        if (theObj.display=="none")
+                theObj.display="block";
+        else
+                theObj.display="none";
+    }
+</script>
 <table>
     <tr valign="top">
         <td class="top-left"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></td>
         <td class="top">
             <h4><a href="{{ url_for('user',email=post.author.email) }}">{{post.author.nickname}}</a></h4>
-            <b>
-                <b>Label: </b>{{ post.title }}
-                | <a href="{{ url_for('like',postid=post.id)}}">Like</a>+{{post.likes.count()}} |
-                <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
-                {% if g.user==post.author %}
-                    <a href="{{ url_for('delpost',postid=post.id)}}">delete</a> |
-                {% endif %}
-            </b>
+            <b>Label: </b>{{ post.title }}<br/>
         </td>
     </tr>
     <tr>
@@ -19,7 +21,28 @@
         <td>
             <b>Says: </b>{{ post.body }}<br />
             <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
+            | <a href="{{ url_for('like',postid=post.id)}}">
+            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle()" style="border-style: hidden">
+            <b>{{post.likes.count()}}</b></button> |
+            <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
+            {% if g.user==post.author %}
+                <a href="{{ url_for('delpost',postid=post.id)}}">delete</a> |
+            {% endif %}<br />
         </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <div id="expand" style="display: none">
+                {% if post.OutLikers() %}
+                    {% for foo in post.OutLikers() %}
+                        <a href="{{ url_for('user',email=foo.email) }}">
+                            <img src="{{foo.avatar(24)}}"></a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </td>
+
     </tr>
     {% if post.comments.count()>0%}
     <tr>

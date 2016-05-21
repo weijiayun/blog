@@ -32,14 +32,14 @@ from flaskr import db
     # for postpiece in jposts:
     #     print postpiece.id,postpiece.author.nickname,postpiece.body
 #from flask.ext.mail import Message
-from flaskr import mail,app
-from config import ADMINS
-msg=Message('test subject',sender=ADMINS[0],recipients=ADMINS)
-msg.body='test body'
-msg.html='<b>HTML</b> body'
-with app.app_context():
-    mail.send(msg)
-
+# from flaskr import mail,app
+# from config import ADMINS
+# #msg=Message('test subject',sender=ADMINS[0],recipients=ADMINS)
+# msg.body='test body'
+# msg.html='<b>HTML</b> body'
+# with app.app_context():
+#     mail.send(msg)
+#
 
 
 
