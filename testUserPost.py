@@ -31,9 +31,7 @@ from flaskr import db
     # print(jposts)
     # for postpiece in jposts:
     #     print postpiece.id,postpiece.author.nickname,postpiece.body
-print 'weijiayun gittest'
-
-from flask.ext.mail import Message
+#from flask.ext.mail import Message
 from flaskr import mail,app
 from config import ADMINS
 msg=Message('test subject',sender=ADMINS[0],recipients=ADMINS)
