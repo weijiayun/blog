@@ -1,0 +1,10 @@
+<table align="right">
+    {% for foo in g.user.Followeds() %}
+        <tr>
+            <td class="right">
+                <a href="{{ url_for('user',email=foo.email) }}">
+                    <img src="{{foo.avatar(24)}}"> {{foo.nickname }}</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>

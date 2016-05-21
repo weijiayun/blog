@@ -1,14 +1,26 @@
 {% extends 'layout.html' %}
+<script>
+    function toggle() {
+        theObj=document.getElementById('expand').style;
+        if (theObj.display=="none")
+                theObj.display="block";
+        else
+                theObj.display="none";
+    }
+</script>
 {% block body %}
     <br>
     <table class="center">
     <tr valign="top">
         <td><img src="{{user.avatar(128)}}"></td>
         <td class="left">
-        <p style="font-size: x-large;"><b>{{user.nickname}}</b></p>
-            {% if user.about_me %}Description: <i>{{ user.about_me }}</i><br/>{% endif %}
-            {% if user.last_seen %}Last seen on: <i>{{ momentjs(user.last_seen).calendar() }}</i><br />{% endif %}
-            <p><b>{{ user.followers.count() }}</b> followers |
+        <table>
+            <tr><td style="font-size: x-large;"><b>{{user.nickname}}</b></td></tr>
+
+            {% if user.about_me %}<tr><td>Description: <i>{{ user.about_me }}</i></td></tr>{% endif %}
+            {% if user.last_seen %}<tr><td>Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i></td></tr>{% endif %}
+            <tr><td>
+                <b>{{ user.followers.count() }}</b> followers |
                 {% if user.id == g.user.id %}
                     <a href="{{url_for('edit')}}">Edit</a> |
                 {% elif not g.user.is_following(user) %}
@@ -21,9 +33,10 @@
                         <a href="{{ url_for('reject',email=user.email) }}">Reject</a> |
                     {% endif %}
                 {% endif %}
-            </p>
+            </td></tr>
+{#        insert followers#}
+        </table>
         </td>
-
     </tr>
     <tr>
         <td></td>
@@ -37,15 +50,13 @@
 {#    <hr color=#988cb9 size="3">#}
 {% endblock %}
 {% block bodyright %}
-    <div class="right">
-    <table align="right">
-    {% for foo in g.user.Followeds() %}
-        <tr align="right">
-            <td>
-                <a href="{{ url_for('user',email=foo.email) }}"><img src="{{foo.avatar(24)}}"> {{foo.nickname }}</a>
-            </td>
-        </tr>
-    {% endfor %}
+        <table align="right">
+            <tr>
+                <th><h2>My followeds</h2></th>
+            </tr>
+            <tr>
+                <td>{% include 'followeds.html' %}</td>
+            </tr>
+
     </table>
-    </div>
 {% endblock %}
