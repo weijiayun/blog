@@ -1,4 +1,4 @@
-#!/opt/Apps/local/Python/anaconda/bin/python2.7
+#!/home/linus/PycharmProjects/flask/bin/python2.7
 from multiprocessing import Process
 from flaskr import app,models
 

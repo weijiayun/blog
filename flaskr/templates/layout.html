@@ -53,10 +53,10 @@
     {% for message in get_flashed_messages() %}
        <div class="flash"><p>{{ message }}</p></div>
     {% endfor %}
-<table>
+<table width="100%">
 <tr>
-    <td width="80%" valign="top">{% block body %}{% endblock %}</td>
-    <td valign="top" >{% block bodyright %}{% endblock %}</td>
+    <td valign="top" width="70%">{% block body %}{% endblock %}</td>
+    <td valign="top" width="30%" align="left">{% block bodyright %}{% endblock %}</td>
 </tr>
 </table>
 <br>

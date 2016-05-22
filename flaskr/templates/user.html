@@ -16,7 +16,7 @@
         <td><img src="{{user.avatar(128)}}"></td>
         <td class="left">
         <table>
-            <tr><td style="font-size: x-large;"><b>{{user.nickname}}</b></td></tr>
+            <tr><td style="font-size: xx-large; color: #002a80"><b>{{user.nickname}}</b></td></tr>
 
             {% if user.about_me %}<tr><td>Description: <i>{{ user.about_me }}</i></td></tr>{% endif %}
             {% if user.last_seen %}<tr><td>Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i></td></tr>{% endif %}
@@ -64,9 +64,15 @@
 {% endblock %}
 {% block bodyright %}
     <br>
-        <table align="right">
+        <table class="left" >
             <tr>
-                <th width="100%"><h3>My followeds</h3></th>
+                <th>
+                    {% if user==g.user %}
+                    <h4 style="color: #149bdf">My followeds</h4>
+                    {% else %}
+                    <h4 style="color: #149bdf">{{ user.nickname }}'s followeds</h4>
+                    {% endif %}
+                </th>
             </tr>
             {% if user.cntFolloweds()>0 %}
             <tr>

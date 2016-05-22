@@ -1,9 +1,9 @@
-<table align="right">
+<table align="left">
     {% for foo in g.user.Followeds() %}
         <tr>
             <td class="right">
                 <a href="{{ url_for('user',email=foo.email) }}">
-                    <img src="{{foo.avatar(24)}}"> {{foo.nickname }}</a>
+                    <img src="{{foo.avatar(24)}}"><b style="color: firebrick">{{foo.nickname }}</b></a>
             </td>
         </tr>
     {% endfor %}
