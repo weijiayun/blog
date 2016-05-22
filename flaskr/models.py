@@ -74,11 +74,13 @@ class User(db.Model):
         return self.followed.filter(followers.c.followed_id==user.id).count()>0
 
     def Followeds(self):
-        return self.followed.all()
-
+        return self.followed.filter(followers.c.followed_id!=self.id).all()
+    def cntFolloweds(self):
+        return self.followed.filter(followers.c.followed_id!=self.id).count()
     def Followers(self):
-        return self.followers.all()
-
+        return self.followers.filter(followers.c.follower_id!=self.id).all()
+    def cntFollowers(self):
+        return self.followers.filter(followers.c.follower_id!=self.id).count()
     def reject(self,user):
         if self.is_following(user):
             if not self.is_rejecting(user):

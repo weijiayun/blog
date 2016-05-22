@@ -1,4 +1,4 @@
-#!/opt/Apps/local/Python/anaconda/bin/python2.7
+#!/home/linus/PycharmProjects/flask/bin/python2.7
 import os,unittest
 from flaskr.models import User,Post,Comment,Like
 from config import basedir
@@ -128,7 +128,7 @@ class TestCase(unittest.TestCase):
         db.session.add(u3)
         db.session.add(u4)
         db.session.commit()
-        print u1.followeds()
+        print u1.Followeds()
         print u4.Followers()
         # make four posts
         # utcnow = datetime.utcnow()
