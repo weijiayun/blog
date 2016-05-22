@@ -1,7 +1,8 @@
+
 <br>
 <script>
-    function toggle() {
-        theObj=document.getElementById('expand').style;
+    function toggle(crtid) {
+        theObj=document.getElementById(crtid).style;
         if (theObj.display=="none")
                 theObj.display="block";
         else
@@ -22,7 +23,7 @@
             <b>Says: </b>{{ post.body }}<br />
             <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
             | <a href="{{ url_for('like',postid=post.id)}}">
-            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle()" style="border-style: hidden;background-color: transparent">
+            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent">
             <b>{{post.likes.count()}}</b></button>|
             <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
             {% if g.user==post.author %}
@@ -30,23 +31,23 @@
             {% endif %}<br />
         </td>
     </tr>
+    {% if post.likes.count()>0 %}
     <tr>
         <td></td>
         <td>
-            <div id="expand" style="display: none">
-                {% if post.OutLikers() %}
+            <p id="{{ post.id }}" style="display: none">
+
                     {% for foo in post.OutLikers() %}
                         <a href="{{ url_for('user',email=foo.email) }}">
-                            <img src="{{foo.avatar(24)}}"></a>
+                            <img src="{{foo.avatar(32)}}"></a>
                     {% endfor %}
-                {% endif %}
-            </div>
+            </p>
         </td>
-
     </tr>
+    {% endif %}
     {% if post.comments.count()>0%}
     <tr>
-        <th></th>
+        <td></td>
 {#        <td><hr color="red" size="2">#}
         <td>
         {% for cmt in post.comments.all() %}
