@@ -221,7 +221,7 @@ def user(email):
     if u is None:
         flash('User {} is not found'.format(email))
         return redirect(url_for('index'))
-    cur = u.posts.all()
+    cur = u.posts.order_by(models.Post.timestamp.desc()).all()
     if u==g.user:
         g.title='My profile'
     else:

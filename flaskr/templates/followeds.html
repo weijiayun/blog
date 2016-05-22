@@ -1,9 +1,11 @@
 <table align="left">
     {% for foo in user.Followeds() %}
         <tr>
-            <td>
-                <a href="{{ url_for('user',email=foo.email) }}">
-                    <img src="{{foo.avatar(32)}}"><b style="color: firebrick">{{foo.nickname }}</b></a>
+            <td style="vertical-align: bottom">
+                <a href="{{ url_for('user',email=foo.email) }}"><img src="{{foo.avatar(32)}}"></a>
+            </td>
+            <td style="vertical-align: bottom">
+                <a href="{{ url_for('user',email=foo.email) }}"><b style="color: firebrick">{{foo.nickname }}</b></a>
             </td>
         </tr>
     {% endfor %}
