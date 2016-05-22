@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73205422-42d4-45aa-8840-89d3c9b88e60" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/manage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/migrate.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/versions/001_migration.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/db_repository/versions/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/flaskr.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_35c0ngr9wq6idu3f.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_4karfza6vh2q7pc3.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_97y92dg6017kkhrk.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_p6clmqzm81vn61bi.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_r6uw65gnlmk99pwx.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/_MAIN_84.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_5k5iccd1d9ajyeag.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_67mtdeexwncemv7k.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_cbbvesoud6wduivr.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_mhvm2ooprqneuvlq.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_ooco9l3k4li0bg7f.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/_MAIN_89.toc" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/flaskr.db" afterPath="$PROJECT_DIR$/database/flaskr.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/models.py" afterPath="$PROJECT_DIR$/flaskr/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/style.css" afterPath="$PROJECT_DIR$/flaskr/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/followers.html" afterPath="$PROJECT_DIR$/flaskr/templates/followers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbInit.py" afterPath="$PROJECT_DIR$/dbInit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/followeds.html" afterPath="$PROJECT_DIR$/flaskr/templates/followeds.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/layout.html" afterPath="$PROJECT_DIR$/flaskr/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/post.html" afterPath="$PROJECT_DIR$/flaskr/templates/post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/user.html" afterPath="$PROJECT_DIR$/flaskr/templates/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runserver.py" afterPath="$PROJECT_DIR$/runserver.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <ignored path="microblog.iws" />
@@ -44,7 +37,7 @@
     <SUITE FILE_PATH="coverage/blog$py_test_in_TestCase.coverage" NAME="py.test in TestCase Coverage Results" MODIFIED="1463828957574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/microblog$py_test_in_TestCase_test_reject_posts.coverage" NAME="py.test in TestCase.test_reject_posts Coverage Results" MODIFIED="1463886960847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$py_test_in_blog.coverage" NAME="py.test in blog Coverage Results" MODIFIED="1463829087662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/microblog$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1463890427746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/microblog$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1463908257884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/microblog$py_test_in_TestCase_and_test_reject_posts.coverage" NAME="py.test in TestCase and test_reject_posts Coverage Results" MODIFIED="1463844081638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1463838813535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/microblog$py_test_in_TestCase_and_test_follow.coverage" NAME="py.test in TestCase and test_follow Coverage Results" MODIFIED="1463021652226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -74,11 +67,9 @@
       <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#td#1;n#tr#2;n#table#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="132">
+              <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,7 +77,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="1628">
               <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
               <folding>
                 <marker date="1463890136582" expanded="true" signature="697:898" placeholder="..." />
@@ -98,8 +89,8 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -118,12 +109,35 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="98">
+              <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
               <folding>
-                <element signature="e#925#983#0#HTML" expanded="true" />
-                <element signature="e#2006#2027#0#HTML" expanded="true" />
+                <element signature="e#495#538#0#HTML" expanded="true" />
+                <element signature="e#2527#2549#0#HTML" expanded="true" />
+                <element signature="e#2623#2645#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="followeds.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/templates/followeds.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#b#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="postsviews.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/postsviews.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,28 +145,8 @@
       <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="281">
               <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="71" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search_results.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/templates/search_results.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -187,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/flaskr/entries.py" />
         <option value="$PROJECT_DIR$/flaskr/entriesviews.py" />
         <option value="$PROJECT_DIR$/flaskr/templates/viewpages/show_entries.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/main/edit.html" />
@@ -236,6 +229,7 @@
         <option value="$PROJECT_DIR$/flaskr/static/style.css" />
         <option value="$PROJECT_DIR$/flaskr/templates/post.html" />
         <option value="$PROJECT_DIR$/flaskr/models.py" />
+        <option value="$PROJECT_DIR$/flaskr/templates/followeds.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/layout.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/user.html" />
       </list>
@@ -405,7 +399,7 @@
       <recent name="$PROJECT_DIR$/flaskr" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dbInit">
+  <component name="RunManager" selected="Python.runserver">
     <configuration default="false" name="runserver" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -849,7 +843,7 @@
     <frame x="0" y="21" width="1366" height="692" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19472913" sideWeight="0.49583334" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19472913" sideWeight="0.49583334" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1145,19 +1139,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/postsviews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/runserver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,15 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/followeds.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1181,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +1166,6 @@
           <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding>
             <element signature="e#50#68#0" expanded="true" />
-            <marker date="1463887798158" expanded="true" signature="7835:7853" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1200,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,7 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,14 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1260,19 +1224,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#2;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="1628">
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <marker date="1463890136582" expanded="true" signature="697:898" placeholder="..." />
@@ -1280,21 +1234,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/postsviews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="91" selection-start-line="12" selection-start-column="91" selection-end-line="12" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+        <state relative-caret-position="156">
+          <caret line="58" column="44" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/followeds.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/templates/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="98">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
           <folding>
-            <element signature="e#925#983#0#HTML" expanded="true" />
-            <element signature="e#2006#2027#0#HTML" expanded="true" />
+            <element signature="e#495#538#0#HTML" expanded="true" />
+            <element signature="e#2527#2549#0#HTML" expanded="true" />
+            <element signature="e#2623#2645#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
