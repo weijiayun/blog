@@ -22,8 +22,8 @@
             <b>Says: </b>{{ post.body }}<br />
             <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
             | <a href="{{ url_for('like',postid=post.id)}}">
-            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle()" style="border-style: hidden">
-            <b>{{post.likes.count()}}</b></button> |
+            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle()" style="border-style: hidden;background-color: transparent">
+            <b>{{post.likes.count()}}</b></button>|
             <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
             {% if g.user==post.author %}
                 <a href="{{ url_for('delpost',postid=post.id)}}">delete</a> |

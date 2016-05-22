@@ -1,14 +1,15 @@
 {% extends 'layout.html' %}
-<script>
-    function toggle() {
-        theObj=document.getElementById('expand').style;
-        if (theObj.display=="none")
-                theObj.display="block";
-        else
-                theObj.display="none";
-    }
-</script>
+
 {% block body %}
+    <script>
+        function togglefollowers() {
+            theObj=document.getElementById('expandfollowers').style;
+            if (theObj.display=="none")
+                theObj.display="block";
+            else
+                theObj.display="none";
+        }
+    </script>
     <br>
     <table class="center">
     <tr valign="top">
@@ -19,25 +20,37 @@
 
             {% if user.about_me %}<tr><td>Description: <i>{{ user.about_me }}</i></td></tr>{% endif %}
             {% if user.last_seen %}<tr><td>Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i></td></tr>{% endif %}
-            <tr><td>
-                <b>{{ user.followers.count() }}</b> followers |
-                {% if user.id == g.user.id %}
-                    <a href="{{url_for('edit')}}">Edit</a> |
-                {% elif not g.user.is_following(user) %}
-                    <a href="{{ url_for('follow',email=user.email) }}">Follow</a>
-                {% else %}
-                    <a href="{{ url_for('unfollow',email=user.email) }}">Unfollow</a> |
-                    {% if g.user.is_rejecting(user) %}
-                        <a href="{{ url_for('unreject',email=user.email) }}">Unreject</a>
+            <tr>
+                <td>
+                    <button type="button" onclick="togglefollowers()"  style="border-style: hidden;background-color: transparent">
+                        <b>{{ user.cntFollowers() }} followers</b></button> |
+                    {% if user.id == g.user.id %}
+                        <a href="{{url_for('edit')}}">Edit</a> |
+                    {% elif not g.user.is_following(user) %}
+                        <a href="{{ url_for('follow',email=user.email) }}">Follow</a>
                     {% else %}
-                        <a href="{{ url_for('reject',email=user.email) }}">Reject</a> |
+                        <a href="{{ url_for('unfollow',email=user.email) }}">Unfollow</a> |
+                        {% if g.user.is_rejecting(user) %}
+                            <a href="{{ url_for('unreject',email=user.email) }}">Unreject</a>
+                        {% else %}
+                            <a href="{{ url_for('reject',email=user.email) }}">Reject</a> |
+                        {% endif %}
                     {% endif %}
-                {% endif %}
-            </td></tr>
+                </td>
+            </tr>
+
 {#        insert followers#}
         </table>
         </td>
     </tr>
+    {% if user.cntFollowers()>0  %}
+     <tr>
+         <td></td>
+         <td id="expandfollowers" style="display: none">
+             {% include 'followers.html' %}
+         </td>
+     </tr>
+    {% endif %}
     <tr>
         <td></td>
         <td>
@@ -50,13 +63,15 @@
 {#    <hr color=#988cb9 size="3">#}
 {% endblock %}
 {% block bodyright %}
+    <br>
         <table align="right">
             <tr>
-                <th><h2>My followeds</h2></th>
+                <th width="100%"><h3>My followeds</h3></th>
             </tr>
+            {% if user.cntFolloweds()>0 %}
             <tr>
                 <td>{% include 'followeds.html' %}</td>
             </tr>
-
+            {% endif %}
     </table>
 {% endblock %}
