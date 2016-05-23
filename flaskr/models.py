@@ -139,7 +139,7 @@ class Comment(db.Model):
         return '<Comment %r>' % (self.body)
 class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    is_like=db.column(db.Boolean(False))
+    is_like=db.Column(db.Boolean(False))
     timestamp = db.Column(db.DateTime)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

@@ -11,7 +11,7 @@
         }
     </script>
     <br>
-    <table class="center">
+    <table class="center" style="width: 100%">
     <tr valign="top">
         <td style="width: 10%"><img src="{{user.avatar(96)}}"></td>
         <td class="left" style="width: 50%">
@@ -53,7 +53,7 @@
     {% endif %}
     <tr>
         <td></td>
-        <td>
+        <td style="width: 100%;">
             {% for post in posts %}
                 {% include 'post.html' %}
             {% endfor %}

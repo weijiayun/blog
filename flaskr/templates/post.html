@@ -53,8 +53,8 @@
         {% for cmt in post.comments.all() %}
                 <table style="width: 65%">
                     <tr>
-                        <td style="width: 12%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
-                            <img src="{{cmt.byuser.avatar(32)}}"></a> :
+                        <td style="width: 14%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
+                            <img src="{{cmt.byuser.avatar(40)}}"></a> :
                         </td>
                         <td style="width: 90%;vertical-align: bottom">
                             <p style="text-align: justify">{{ cmt.body }}</p>
