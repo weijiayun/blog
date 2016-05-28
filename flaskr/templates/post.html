@@ -9,9 +9,9 @@
                 theObj.display="none";
     }
 </script>
-<table>
-    <tr valign="top">
-        <td class="top-left"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></td>
+<table style="width: 90%">
+    <tr valign="top" >
+        <td class="top-left" style="width: 10%;"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></td>
         <td class="top">
             <h4><a href="{{ url_for('user',email=post.author.email) }}">{{post.author.nickname}}</a></h4>
             <b>Label: </b>{{ post.title }}<br/>
@@ -20,7 +20,7 @@
     <tr>
         <td></td>
         <td>
-            <b>Says: </b>{{ post.body }}<br />
+            <p style="text-align: justify;"><b>Says: </b>{{ post.body }}<br /></p>
             <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
             | <a href="{{ url_for('like',postid=post.id)}}">
             <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent">
@@ -51,15 +51,18 @@
 {#        <td><hr color="red" size="2">#}
         <td>
         {% for cmt in post.comments.all() %}
-                <table>
+                <table style="width: 65%">
                     <tr>
-                        <td class=""><a href="{{ url_for('user',email=cmt.byuser.email) }}">
-                            <img src="{{cmt.byuser.avatar(32)}}"></a> :
+                        <td style="width: 14%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
+                            <img src="{{cmt.byuser.avatar(40)}}"></a> :
                         </td>
-                        <td>
-                            {{ cmt.body }}
-                            <br><i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i>
+                        <td style="width: 90%;vertical-align: bottom">
+                            <p style="text-align: justify">{{ cmt.body }}</p>
                         </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i></td>
                     </tr>
                 </table>
         {% endfor %}
