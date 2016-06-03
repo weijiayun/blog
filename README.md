@@ -1,1 +1,1 @@
-# blog
+This is a twitter like code base on flask
