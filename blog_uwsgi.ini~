@@ -1,0 +1,8 @@
+[uwsgi]
+socket = /home/linus/PycharmProjects/blog/%n.sock
+base = /home/linus/PycharmProjects/blog/
+wsgi-file = runserver.py
+callable = app
+processes = 4
+threads = 2
+plugins = python

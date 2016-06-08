@@ -1,12 +1,12 @@
 
 <br>
-<script>
+<script type="text/javascript">
     function toggle(crtid) {
         theObj=document.getElementById(crtid).style;
         if (theObj.display=="none")
-                theObj.display="block";
+            theObj.display="block";
         else
-                theObj.display="none";
+            theObj.display="none";
     }
 </script>
 <table style="width: 90%">
@@ -20,15 +20,16 @@
     <tr>
         <td></td>
         <td>
-            <p style="text-align: justify;"><b>Says: </b>{{ post.body }}<br /></p>
-            <i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
-            | <a href="{{ url_for('like',postid=post.id)}}">
-            <img src="/static/img/zan.png"></a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent">
-            <b>{{post.likes.count()}}</b></button>|
-            <a href="{{ url_for('addcomment',postid=post.id) }}">comment</a> |
+            <p style="text-align: justify;"><b>Says: </b>{{ post.body }}
+                <br><i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
+                <a href="{{ url_for('like',postid=post.id)}}"><img src="/static/img/zan.png">
+                </a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent" >
+            <b>{{post.likes.count()}}</b></button><button type="button" onclick="toggle('c{{ post.id }}')">Comment</button>
             {% if g.user==post.author %}
-                <a href="{{ url_for('delpost',postid=post.id)}}">delete</a> |
-            {% endif %}<br />
+                <button href="{{ url_for('delpost',postid=post.id)}}">Delete</button>
+
+            {% endif %}
+            </p>
         </td>
     </tr>
     {% if post.likes.count()>0 %}
@@ -36,10 +37,9 @@
         <td></td>
         <td>
             <p id="{{ post.id }}" style="display: none">
-
                     {% for foo in post.OutLikers() %}
                         <a href="{{ url_for('user',email=foo.email) }}">
-                            <img src="{{foo.avatar(32)}}"></a>
+                            <img src="{{foo.avatar(28)}}"></a>
                     {% endfor %}
             </p>
         </td>
@@ -51,23 +51,25 @@
 {#        <td><hr color="red" size="2">#}
         <td>
         {% for cmt in post.comments.all() %}
-                <table style="width: 65%">
+                <table style="width: 85%">
                     <tr>
-                        <td style="width: 17%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
-                            <img src="{{cmt.byuser.avatar(38)}}"></a> :
+                        <td style="width: 12%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
+                            <img src="{{cmt.byuser.avatar(32)}}"></a> :
                         </td>
                         <td style="width: 90%;vertical-align: bottom">
-                            <p style="text-align: justify">{{ cmt.body }}</p>
+                            <p style="text-align: justify; font-size: small"  >{{ cmt.body }}
+                                <br><i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i></p>
                         </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i></td>
                     </tr>
                 </table>
         {% endfor %}
         </td>
     </tr>
 {% endif %}
+<tr>
+    <td></td>
+    <td>
+        <i id="c{{ post.id }}" style="display: none">{% include 'addcomment.html' %}</i>
+    </td>
+</tr>
 </table>
-{#<hr color=#987cb9 size="3.5">#}
