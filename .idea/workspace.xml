@@ -2,79 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fefd784-10ed-4358-8e90-5fc2f675c787" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_60c79orhebctdh0c.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_6aua3emntjs4sei1.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_7gruxtyxol8uddar.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_twodszwkn8x3jucz.seg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/_MAIN_133.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_8urfl3taqk41c6qg.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/MAIN_a61ish62i94y4cmh.seg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search.db/Post/_MAIN_142.toc" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/flaskr.db" afterPath="$PROJECT_DIR$/database/flaskr.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/glyphicons-halflings-white.png" afterPath="$PROJECT_DIR$/flaskr/static/img/glyphicons-halflings-white.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/glyphicons-halflings.png" afterPath="$PROJECT_DIR$/flaskr/static/img/glyphicons-halflings.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/google.png" afterPath="$PROJECT_DIR$/flaskr/static/img/google.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/sjtu.png" afterPath="$PROJECT_DIR$/flaskr/static/img/sjtu.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/wechat.png" afterPath="$PROJECT_DIR$/flaskr/static/img/wechat.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/yahoo.png" afterPath="$PROJECT_DIR$/flaskr/static/img/yahoo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/img/zan.png" afterPath="$PROJECT_DIR$/flaskr/static/img/zan.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blog.iml" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/jiayun_wei.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/jiayun_wei.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/README" afterPath="$PROJECT_DIR$/database/db_repository/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/__init__.py" afterPath="$PROJECT_DIR$/database/db_repository/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/manage.py" afterPath="$PROJECT_DIR$/database/db_repository/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/migrate.cfg" afterPath="$PROJECT_DIR$/database/db_repository/migrate.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/001_migration.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/001_migration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/002_migration.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/002_migration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/003_migration.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/003_migration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/004_migration.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/004_migration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/005_migration.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/005_migration.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/db_repository/versions/__init__.py" afterPath="$PROJECT_DIR$/database/db_repository/versions/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_downgrade.py" afterPath="$PROJECT_DIR$/db_downgrade.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_upgrade.py" afterPath="$PROJECT_DIR$/db_upgrade.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/errorlog.py" afterPath="$PROJECT_DIR$/errorlog.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/__init__.py" afterPath="$PROJECT_DIR$/flaskr/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/appviews.py" afterPath="$PROJECT_DIR$/flaskr/appviews.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/email.py" afterPath="$PROJECT_DIR$/flaskr/email.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/forms.py" afterPath="$PROJECT_DIR$/flaskr/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/host.access.log" afterPath="$PROJECT_DIR$/flaskr/host.access.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/models.py" afterPath="$PROJECT_DIR$/flaskr/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/postsviews.py" afterPath="$PROJECT_DIR$/flaskr/postsviews.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/config.yaml" afterPath="$PROJECT_DIR$/flaskr/static/config.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/flaskr/static/css/bootstrap-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/flaskr/static/css/bootstrap-responsive.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/flaskr/static/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/flaskr/static/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/js/bootstrap.js" afterPath="$PROJECT_DIR$/flaskr/static/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/flaskr/static/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/js/moment.min.js" afterPath="$PROJECT_DIR$/flaskr/static/js/moment.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/static/style.css" afterPath="$PROJECT_DIR$/flaskr/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/404.html" afterPath="$PROJECT_DIR$/flaskr/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/500.html" afterPath="$PROJECT_DIR$/flaskr/templates/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/addcomment.html" afterPath="$PROJECT_DIR$/flaskr/templates/addcomment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/addpost.html" afterPath="$PROJECT_DIR$/flaskr/templates/addpost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/edit.html" afterPath="$PROJECT_DIR$/flaskr/templates/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/followeds.html" afterPath="$PROJECT_DIR$/flaskr/templates/followeds.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/follower_email.html" afterPath="$PROJECT_DIR$/flaskr/templates/follower_email.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/follower_email.txt" afterPath="$PROJECT_DIR$/flaskr/templates/follower_email.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/followers.html" afterPath="$PROJECT_DIR$/flaskr/templates/followers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/index.html" afterPath="$PROJECT_DIR$/flaskr/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/layout.html" afterPath="$PROJECT_DIR$/flaskr/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/login.html" afterPath="$PROJECT_DIR$/flaskr/templates/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/post.html" afterPath="$PROJECT_DIR$/flaskr/templates/post.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/providers.html" afterPath="$PROJECT_DIR$/flaskr/templates/providers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/search_results.html" afterPath="$PROJECT_DIR$/flaskr/templates/search_results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/signup.html" afterPath="$PROJECT_DIR$/flaskr/templates/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/templates/user.html" afterPath="$PROJECT_DIR$/flaskr/templates/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flaskr/tmp/Jiayunblog.log" afterPath="$PROJECT_DIR$/flaskr/tmp/Jiayunblog.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gunicorn.conf" afterPath="$PROJECT_DIR$/gunicorn.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/momentjs.py" afterPath="$PROJECT_DIR$/momentjs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runserver.py" afterPath="$PROJECT_DIR$/runserver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testUserPost.py" afterPath="$PROJECT_DIR$/testUserPost.py" />
     </list>
     <ignored path="blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +23,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/blog$dbInit.coverage" NAME="dbInit Coverage Results" MODIFIED="1463975122775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/blog$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1465413886578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blog$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1465442337262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -103,7 +37,7 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1234">
+            <state relative-caret-position="264">
               <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
               <folding />
             </state>
@@ -123,18 +57,12 @@
       <file leaf-file-name="post.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="176">
+              <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
               <folding>
-                <element signature="n#style#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#td#1;n#tr#2;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#td#1;n#tr#4;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,8 +91,8 @@
       <file leaf-file-name="appviews.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/appviews.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6204">
-              <caret line="291" column="6" selection-start-line="289" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
+            <state relative-caret-position="-1">
+              <caret line="304" column="37" selection-start-line="304" selection-start-column="37" selection-end-line="304" selection-end-column="37" />
               <folding>
                 <element signature="e#48#57#0" expanded="true" />
               </folding>
@@ -185,8 +113,18 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
+            <state relative-caret-position="308">
               <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="runserver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runserver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -215,9 +153,9 @@
         <option value="$PROJECT_DIR$/flaskr/static/style.css" />
         <option value="$PROJECT_DIR$/flaskr/appviews.py" />
         <option value="$PROJECT_DIR$/flaskr/templates/addpost.html" />
-        <option value="$PROJECT_DIR$/runserver.py" />
         <option value="$PROJECT_DIR$/flaskr/templates/user.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/addcomment.html" />
+        <option value="$PROJECT_DIR$/runserver.py" />
         <option value="$PROJECT_DIR$/flaskr/templates/post.html" />
       </list>
     </option>
@@ -258,11 +196,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -568,13 +506,13 @@
     <frame x="0" y="21" width="1366" height="692" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18667643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37335286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15619968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15136877" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -625,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -648,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -671,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,7 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,35 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/appviews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6204">
-          <caret line="291" column="6" selection-start-line="289" selection-start-column="0" selection-end-line="289" selection-end-column="6" />
-          <folding>
-            <element signature="e#48#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/followeds.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,7 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,15 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,6 +841,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="227" column="0" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -960,14 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1234">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -988,20 +876,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/appviews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="304" column="37" selection-start-line="304" selection-start-column="37" selection-end-line="304" selection-end-column="37" />
+          <folding>
+            <element signature="e#48#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/followeds.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/templates/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="176">
+          <caret line="23" column="92" selection-start-line="23" selection-start-column="92" selection-end-line="23" selection-end-column="92" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#td#1;n#tr#2;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#p#0;n#td#1;n#tr#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#td#1;n#tr#4;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#p#0;n#td#1;n#tr#1;n#table#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

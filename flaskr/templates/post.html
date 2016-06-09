@@ -23,11 +23,10 @@
             <p style="text-align: justify;"><b>Says: </b>{{ post.body }}
                 <br><i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
                 <a href="{{ url_for('like',postid=post.id)}}"><img src="/static/img/zan.png">
-                </a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent" >
-            <b>{{post.likes.count()}}</b></button><button type="button" onclick="toggle('c{{ post.id }}')">Comment</button>
+                </a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent" ><b>{{post.likes.count()}}</b></button>
+                <a type="button" onclick="toggle('c{{ post.id }}')" style="text-decoration-line: none">Comment</a>
             {% if g.user==post.author %}
-                <button href="{{ url_for('delpost',postid=post.id)}}">Delete</button>
-
+               | <a href="{{ url_for('delpost',postid=post.id)}}" style="text-decoration-line: none">Delete</a>
             {% endif %}
             </p>
         </td>
