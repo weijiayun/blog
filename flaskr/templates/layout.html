@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="page">
-    <h1>{{ g.title }}</h1></br>
+    <h1 style="font-family: 'Lucida Grande'">{{ g.title }}</h1></br>
     <table class="right">
         <tr>
             <td></td>
@@ -23,7 +23,7 @@
                     <table>
                         <tr valign="top">
                             <td><input type="text" name="search" style="height:27px" /></td>
-                            <td><button type="submit"style="height: 26px;" class="top">Search</button></td>
+                            <td><button type="submit"style="height: 26px;;font-family: georgia" class="top">Search</button></td>
                         </tr>
                     </table>
                 </form>
@@ -35,15 +35,15 @@
         <td>
             {% if not session.logged_in %}
                 <b class="right">
-                | <a href="{{ url_for('login') }}">Log in</a>
-                | <a href="{{ url_for('signup') }}">Sign up</a>|
+                <a href="{{ url_for('login') }}" style="text-decoration-line: none;font-family: georgia">Log in</a>
+                <a href="{{ url_for('signup') }}" style="text-decoration-line: none;font-family: georgia">Sign up</a>
                 </b>
             {% else %}
                 <b class="right">
-                    | <a href="{{ url_for('index') }}">Feeds</a>
-                    | <a href="{{ url_for('viewposts.add_post') }}">Status</a>
-                    | <a href="{{ url_for('user',email=g.user.email) }}">Profile</a>
-                    | <a href="{{ url_for('logout') }}">Logout</a> |
+                    <a href="{{ url_for('index') }}" style="text-decoration-line: none;font-family: georgia">Feeds</a>
+                    <a href="{{ url_for('viewposts.add_post') }}" style="text-decoration-line: none;font-family: georgia">Status</a>
+                    <a href="{{ url_for('user',email=g.user.email) }}" style="text-decoration-line: none;font-family: georgia">Profile</a>
+                    <a href="{{ url_for('logout') }}" style="text-decoration-line: none;font-family: georgia">Logout</a>
                 </b><br />
             {% endif %}
         </td>
@@ -55,8 +55,8 @@
     {% endfor %}
 <table width="100%">
 <tr>
-    <td valign="top" width="70%">{% block body %}{% endblock %}</td>
-    <td valign="top" width="30%" align="left">{% block bodyright %}{% endblock %}</td>
+    <td valign="top" width="80%">{% block body %}{% endblock %}</td>
+    <td valign="top" width="20%">{% block bodyright %}{% endblock %}</td>
 </tr>
 </table>
 <br>

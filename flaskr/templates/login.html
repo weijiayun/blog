@@ -4,13 +4,29 @@
     {% endif %}
     <form action="{{ url_for('login') }}" method="post" class="entries">
         {{ form.hidden_tag() }}
-        <dl class="center">
-            <dt><b>Your email:</b>
-            <li><input type="text" name="email" style="height: 27px;"/></li>
-            <dt><b>Your password:</b>
-            <li><input type="password" name="password" style="height: 27px"/></li>
-            <li>{{ form.remember_me }} Remeber Me</li>
-            <li><button type="submit"  style="color: #0e90d2">Login</button></li>
-        </dl>
+        <table>
+            <tr>
+                <td><b>Your email:</b></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="email" style="height: 27px;"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Your password:</b></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password" style="height: 27px"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{ form.remember_me }} Remeber Me</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button type="submit"  style="color: #0e90d2">Login</button></td>
+            </tr>
+        </table>
     </form>
 {% endblock %}

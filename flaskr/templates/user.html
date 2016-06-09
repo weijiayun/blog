@@ -13,29 +13,35 @@
     <br>
     <table class="center" style="width: 100%">
     <tr valign="top">
-        <td style="width: 18%"><img src="{{user.avatar(96)}}"></td>
-        <td class="left" style="width: 50%">
+        <td style="width: 13%;"><img src="{{user.avatar(70)}}"></td>
+        <td class="left" style="width: 100%">
         <table>
-            <tr><td style="font-size: xx-large; color: #002a80"><b>{{user.nickname}}</b></td></tr>
-
-            {% if user.about_me %}<tr><td>Description: <i>{{ user.about_me }}</i></td></tr>{% endif %}
-            {% if user.last_seen %}<tr><td>Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i></td></tr>{% endif %}
+            <tr valign="top"><td style="font-size: xx-large; color: #002a80;font-family: georgia, serif" ><b>{{user.nickname}}</b></td></tr>
             <tr>
                 <td>
+                    <p style="font-family: georgia, serif">
+                        {% if user.about_me %}
+                            Description: <i>{{ user.about_me }}</i><br>
+                        {% endif %}
+                        {% if user.last_seen %}
+                            Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i>
+                        {% endif %}
+                    <br>
                     <button type="button" onclick="togglefollowers()"  style="border-style: hidden;background-color: transparent">
-                        <b>{{ user.cntFollowers() }} followers</b></button> |
+                        <b>{{ user.cntFollowers() }} followers</b></button>
                     {% if user.id == g.user.id %}
-                        <a href="{{url_for('edit')}}">Edit</a> |
+                        <a href="{{url_for('edit')}}" style="text-decoration-line: none">Edit</a>
                     {% elif not g.user.is_following(user) %}
-                        <a href="{{ url_for('follow',email=user.email) }}">Follow</a>
+                        <a href="{{ url_for('follow',email=user.email) }}" style="text-decoration-line: none">Follow</a>
                     {% else %}
-                        <a href="{{ url_for('unfollow',email=user.email) }}">Unfollow</a> |
+                        <a href="{{ url_for('unfollow',email=user.email) }}" style="text-decoration-line: none">Unfollow</a>
                         {% if g.user.is_rejecting(user) %}
-                            <a href="{{ url_for('unreject',email=user.email) }}">Unreject</a>
+                            <a href="{{ url_for('unreject',email=user.email) }}" style="text-decoration-line: none">Unreject</a>
                         {% else %}
-                            <a href="{{ url_for('reject',email=user.email) }}">Reject</a> |
+                            <a href="{{ url_for('reject',email=user.email) }}" style="text-decoration-line: none">Reject</a>
                         {% endif %}
                     {% endif %}
+                    </p>
                 </td>
             </tr>
 
@@ -53,7 +59,7 @@
     {% endif %}
     <tr>
         <td></td>
-        <td style="width: 100%;">
+        <td>
             {% for post in posts %}
                 {% include 'post.html' %}
             {% endfor %}
@@ -68,15 +74,15 @@
             <tr>
                 <th>
                     {% if user==g.user %}
-                    <h4 style="color: #149bdf">My followeds</h4>
+                    <h4 style="color: #149bdf;font-family: georgia, serif">My followeds</h4>
                     {% else %}
-                    <h4 style="color: #149bdf">{{ user.nickname }}'s followeds</h4>
+                    <h4 style="color: #149bdf;font-family: georgia, serif">{{ user.nickname }}'s followeds</h4>
                     {% endif %}
                 </th>
             </tr>
             {% if user.cntFolloweds()>0 %}
             <tr>
-                <td>{% include 'followeds.html' %}</td>
+                <td align="left">{% include 'followeds.html' %}</td>
             </tr>
             {% endif %}
     </table>

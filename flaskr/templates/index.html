@@ -1,15 +1,11 @@
 {% extends 'layout.html' %}
 {% block body %}
     <br>
-    <div class="center">
-        {% if session.logged_in %}
-            <ul class="center">
-                {% for post in posts %}
-                    {% include 'post.html' %}
-                {% else %}
-                    <li><em>Unbelievable. No entries so far here</em>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+    {% if session.logged_in %}
+            {% for post in posts %}
+                {% include 'post.html' %}
+            {% else %}
+                <em>Unbelievable. No entries so far here</em>
+            {% endfor %}
+    {% endif %}
 {% endblock %}

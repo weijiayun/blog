@@ -2,17 +2,47 @@
 {% block body %}
     {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
     {% endif %}
-    <form action="{{ url_for('signup') }}" method="post" class="entries">
-        <dl class="center">
-            <dt><b>Username:</b>
-            <li><input type="text" name="username" style=" height: 27px;" value="{{ tmpNickname }}"></li>
-            <dt><b>Email:</b>
-            <li><input type="text" name="email" style=" height: 27px;"/></li>
-            <dt><b>Password:</b>
-            <li><input type="password" name="password1" style=" height: 27px;"/></li>
-            <dt><b>Confirm Password:</b>
-            <li><input type="password" name="password2" style=" height: 27px;"/></li>
-            <li><button type="submit" style="color: #0e90d2">Sign up</button></li>
-        </dl>
+    <form action="{{ url_for('signup') }}" method="post">
+        <table>
+            <tr>
+                <td><b>Username:</b></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="username" style=" height: 27px;" value="{{ tmpNickname }}"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Email:</b></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="email" style=" height: 27px;"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Password:</b></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password1" style=" height: 27px;"/></td>
+
+            </tr>
+            <tr>
+                <td><p style="color: #0088cc">number, low- and up-case character is needed!</p></td>
+            </tr>
+            <tr>
+                <td><b>Confirm Password:</b></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="password" name="password2" style=" height: 27px;"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><button type="submit" style="color: #0e90d2">Sign up</button></td>
+                <td></td>
+            </tr>
+        </table>
     </form>
 {% endblock %}
