@@ -1,8 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
+    <script type="text/javascript" src="static/js/md5.js"></script>
+    <script type="text/javascript">
+    function encryptionPassword(){
+        document.getElementById('passwd').value =hex_md5(document.getElementById('passwd').value);
+    }
+    </script>
     {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
     {% endif %}
-    <form action="{{ url_for('login') }}" method="post" class="entries">
+    <form action="{{ url_for('login') }}" method="post" class="entries" onsubmit="encryptionPassword()">
         {{ form.hidden_tag() }}
         <table>
             <tr>
@@ -17,7 +23,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td><input type="password" name="password" style="height: 27px"/></td>
+                <td><input name="password" type="password" style="height: 27px" id="passwd"/></td>
                 <td></td>
             </tr>
             <tr>

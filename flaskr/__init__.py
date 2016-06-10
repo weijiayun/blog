@@ -5,6 +5,8 @@ from flask.ext.login import LoginManager
 import re
 from flask.ext.mail import Mail
 from momentjs import momentjs
+from sqlalchemy.orm import sessionmaker
+
 
 app=Flask(__name__)
 app.wsgi_app=ProxyFix(app.wsgi_app)

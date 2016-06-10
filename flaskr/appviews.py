@@ -1,5 +1,6 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
 import re
+from hashlib import md5
 from forms import EditForm
 from flask import redirect,request,\
     session,url_for,g,abort,render_template,flash
@@ -9,6 +10,7 @@ from .forms import LoginForm,SearchForm
 from flask.ext.login import current_user,login_user,login_required
 from datetime import datetime
 from email import follow_notification
+
 def uniqueMail(newemail):
     user=models.User.query.filter_by(email=newemail).first()
     if user!=None:
@@ -24,10 +26,6 @@ def befort_request():
     g.user=current_user
     g.user.last_seen=datetime.utcnow()
 
-@lm.user_loader
-def load_user(id):
-    return models.User.query.get(int(id))
-
 @app.route('/search',methods=['POST'])
 @login_required
 def search():
@@ -35,7 +33,9 @@ def search():
         if session.get('logged_in'):
             return redirect(url_for('search_results', query=request.form['search']))
     return redirect(url_for('index'))
-
+@lm.user_loader
+def load_user(id):
+    return models.User.query.get(int(id))
 
 @app.route('/search_results/<query>')
 @login_required
@@ -67,33 +67,30 @@ def login():
     g.title='Log In'
     error = None
     form=LoginForm()
-    remember_me=False
+    remember_me = False
     if request.method == 'POST':
-        cur=models.User.query.all()
-        usersInfo = [dict(useremail=user.email, password=user.password,ID=int(user.get_id())) for user in cur]
-        userlist=[]
-        for foo in usersInfo:
-            userlist.append(foo['useremail'])
-        if request.form['email'] not in userlist:
+        userinfo = models.User.query.filter(models.User.email == request.form['email']).first()
+        if userinfo is None:
             error='The Account Is Not Signed'
         else:
-            userindex = userlist.index(request.form['email'])
-            userID=usersInfo[userindex]['ID']
-            user=load_user(userID)
-            if request.form['password']!=usersInfo[userindex]['password']:
+            userID=userinfo.id
+            encryptpswd = request.form['password']
+            if encryptpswd != userinfo.password:
                 error='The Password Cannot Match The Account'
             else:
                 session['crtUser']=userID
                 session['logged_in']=True
                 remember_me = form.remember_me.data
-                login_user(user,remember=remember_me)
+                login_user(userinfo,remember=remember_me)
                 flash('You were logged in successfully')
                 return redirect(url_for('index'))
+    token = str(datetime.utcnow())
+    session['token'] = token
+    print token
     return render_template('login.html',
                            error=error,
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
-
 @app.route('/logout')
 def logout():
     session['logged_in']=False

@@ -1,6 +1,7 @@
-Dear {{ user.nickname }}:
-{{ follower.nickname }} is a follower. Click on the following link to vist {{user.nickname }}'s profile page:
-{{ url_for('user',email=follower.email,_external=True) }}
-Regards,
-The microblog admin
+Dear {{ user.nickname }}:\n
+\t{{ follower.nickname }} is a new follower of you blog. \n
+\tClick on the following link to vist {{guser.nickname }}'s profile page:\n
+\t\t{{ url_for('user',email=follower.email,_external=True) }}\n
+\nRegards,
+\nThe microblog admin
 

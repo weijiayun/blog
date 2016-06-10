@@ -35,6 +35,14 @@ from flaskr import db
 # from flaskr import mail,app
 # from config import ADMINS
 # #msg=Message('test subject',sender=ADMINS[0],recipients=ADMINS)
+
+
+from time import time
+a=time()
+from datetime import datetime
+b=datetime.utcnow()
+print a,str(b)
+print isinstance(str(b),str)
 # msg.body='test body'
 # msg.html='<b>HTML</b> body'
 # with app.app_context():
