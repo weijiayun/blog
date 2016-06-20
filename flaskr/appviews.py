@@ -52,7 +52,7 @@ def search_results(query):
 @app.route('/index')
 @app.route('/index/<int:page>')
 @login_required
-def index(page=1):
+def index(page = 1):
     g.search_form=SearchForm()
     if not session.get('logged_in'):
         return redirect(url_for('login'))
@@ -152,16 +152,16 @@ def follow(email):
         return redirect(url_for('index'))
     if user==g.user:
         flash("You can't follow yourself")
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page = g.crtpage))
     u=g.user.follow(user)
     if u is None:
         flash('Cannot follow'+user.nickname+'!')
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page = g.crtpage))
     db.session.add(u)
     db.session.commit()
     follow_notification(user,g.user)
     flash('You are following '+user.nickname)
-    return redirect(url_for('user',email=email))
+    return redirect(url_for('user',email=email,page = g.crtpage))
 
 @app.route('/unfollow/<email>')
 @login_required
@@ -172,15 +172,15 @@ def unfollow(email):
         return redirect(url_for('index'))
     if user==g.user:
         flash("You can't unfollow yourself")
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page = g.crtpage))
     u=g.user.unfollow(user)
     if u is None:
         flash('Cannot unfollow'+user.nickname+'!')
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page = g.crtpage))
     db.session.add(u)
     db.session.commit()
     flash('You have stoped following '+user.nickname)
-    return redirect(url_for('user',email=email))
+    return redirect(url_for('user',email=email,page = g.crtpage))
 
 @app.route('/reject/<email>')
 @login_required
@@ -191,7 +191,7 @@ def reject(email):
         return redirect(url_for('index'))
     if user==g.user:
         flash("You can't reject yourself")
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page = g.crtpage))
     u=g.user.reject(user)
     if u is None:
         flash('Cannot follow'+user.nickname+'!')
@@ -210,15 +210,15 @@ def unreject(email):
         return redirect(url_for('index'))
     if user==g.user:
         flash("You can't unfollow yourself")
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page=g.crtpage))
     u=g.user.unreject(user)
     if u is None:
         flash('Cannot unfollow'+user.nickname+'!')
-        return redirect(url_for('user',email=email))
+        return redirect(url_for('user',email=email,page=g.crtpage))
     db.session.add(u)
     db.session.commit()
     flash('You have stoped following '+user.nickname)
-    return redirect(url_for('user',email=email))
+    return redirect(url_for('user',email=email,page=g.crtpage))
 
 @app.route('/user/<email>/<int:page>',methods=['GET','POST'])
 @login_required
@@ -234,6 +234,7 @@ def user(email,page = 1):
         g.title=u.nickname+"'s profile"
     items_per_page = g.user.get_items_per_page()
     totalpages = u.posts.count()
+    g.crtpage = page
     totalpages = int((totalpages + items_per_page - 1) / items_per_page)
     cur = u.posts.order_by(models.Post.timestamp.desc()).offset((page-1)*items_per_page).limit(items_per_page).all()
     return render_template('user.html',
@@ -254,7 +255,7 @@ def edit():
         db.session.add(g.user)
         db.session.commit()
         flash('Your changes have been saved.')
-        return redirect(url_for('user',email=g.user.email))
+        return redirect(url_for('user',email=g.user.email,page = g.crtpage))
     else:
         form.nickname.data=g.user.nickname
         form.about_me.data=g.user.about_me
