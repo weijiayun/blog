@@ -26,6 +26,7 @@ class User(db.Model):
     password=db.Column(db.String(20))
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
+    items_per_page = db.Column(db.Integer,default=4)
 
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     comments = db.relationship('Comment', backref='byuser', lazy='dynamic')
@@ -42,6 +43,8 @@ class User(db.Model):
         secondaryjoin = (rejecters.c.rejected_id == id),
         backref = db.backref('rejecters', lazy = 'dynamic'),
         lazy = 'dynamic')
+    def get_items_per_page(self):
+        return self.items_per_page
 
     def avatar(self,size):
         return 'http://www.gravatar.com/avatar/' + md5(self.email).hexdigest() + '?d=mm&s=' + str(size)
@@ -95,15 +98,24 @@ class User(db.Model):
     def is_rejecting(self,user):
         return self.rejected.filter(rejecters.c.rejected_id==user.id).count()>0
 
-    def followed_posts(self):
-        form1=Post.query.join(followers,(followers.c.followed_id==Post.user_id))\
-            .filter(followers.c.follower_id==self.id)\
-            .order_by(Post.timestamp.desc()).all()
-        form2=Post.query.join(rejecters,(rejecters.c.rejected_id==Post.user_id))\
-            .filter(rejecters.c.rejecter_id==self.id)\
-            .order_by(Post.timestamp.desc()).all()
+    def get_followed_posts_count(self):
+        form1 = db.session.query(Post).join(followers, (followers.c.followed_id == Post.user_id)).filter(
+            followers.c.follower_id == self.id)
+        form2 = db.session.query(Post.id).join(rejecters, (rejecters.c.rejected_id == Post.user_id)).filter(
+            rejecters.c.rejecter_id == self.id)
+        count = form1.filter(~Post.id.in_(form2)) \
+            .order_by(Post.timestamp.desc()).count()
+        return count
 
-        return [post for post in form1 if post not in form2]
+    def get_followed_posts(self,page):
+        form1 = db.session.query(Post).join(followers, (followers.c.followed_id == Post.user_id)).filter(
+            followers.c.follower_id == self.id)
+        form2 = db.session.query(Post.id).join(rejecters, (rejecters.c.rejected_id == Post.user_id)).filter(
+            rejecters.c.rejecter_id == self.id)
+        form3 = form1.filter(~Post.id.in_(form2)) \
+            .order_by(Post.timestamp.desc())
+        form4 = form3.offset((page-1)*self.items_per_page).limit(self.items_per_page).all()
+        return form4
 
 
     def __repr__(self):

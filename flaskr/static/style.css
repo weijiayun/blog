@@ -1,10 +1,23 @@
 body         {font-family: sans-serif;background: #eee;}
-.page        {margin: 2em;width: 55em;border: 5px solid #ccc;padding: 0.8em;background: white;}
-.add-entry   {font-size: 0.9em;border-bottom: 2px solid #ccc;}
-.add-entry dl {font-weight: bold;}
+.page        {width: 65em;background: white;margin-left: 25%}
 .metanav     {text-align: right;font-size: 0.8em;padding: 0.3em;}
 .rightmag    {text-align: right;font-size: 0.8em;padding: 0.3em;}
 .flash       {background: #CEE5F5;padding: 0.5em;border: 1px solid #AACBE2;}
 .error       {background: #F0D6D6;padding: 0.5em;}
 .left        {float: left;}
 .right       {float: right;}
+.post        {font-family: georgia}
+.postuserinfo {font-family: georgia,Serif;text-align: justify}
+.postbutton   {color: #0e90d2;font-size: 15px;font-family: georgia}
+.transpbutton {border-style: hidden;background-color: transparent}
+.usernickname {font-size: x-large;color: purple}
+.profilenickname {font-size: xx-large; color: #002a80;font-family: georgia, serif}
+.profileuserdetail {font-family: georgia, serif}
+.posttime    {font-size: small}
+.title       {font-family: georgia;color: purple}
+.comment     {text-align: justify;font-size: small;font-family: georgia, serif}
+.commenttime {font-size: xx-small}
+.rightparttitle {color: purple;font-family: georgia, serif}
+.rightpartelems {color: #149bdf;font-family: georgia, serif}
+.layoutItems   {text-decoration-line: none;font-family: georgia;color: purple;font-size: large}
+.searchbutton  {height: 26px;font-family: georgia;align-content: center}

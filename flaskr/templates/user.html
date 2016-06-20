@@ -1,30 +1,31 @@
 {% extends 'layout.html' %}
-
 {% block body %}
-    <script>
-        function togglefollowers() {
-            theObj=document.getElementById('expandfollowers').style;
-            if (theObj.display=="none")
-                theObj.display="block";
-            else
-                theObj.display="none";
-        }
-    </script>
     <br>
+    <form action="{{ url_for('add_post') }}" method="post" id="blogstatus" style="display: none" class="center">
+        <table>
+            <tr><td><br>Title:</td></tr>
+            <tr><td><input type="text" name="title" maxlength="60" style="height: 30px;width: 300px"></td></tr>
+            <tr><td>Status:</td></tr>
+            <tr>
+                <td><textarea name="text" rows="5" style="width:400px" maxlength="500" ></textarea></td>
+            </tr>
+            <tr><td><button type="submit" onclick="toggle('blogstatus')">Share</button></td></tr>
+        </table>
+    </form>
     <table class="center" style="width: 100%">
     <tr valign="top">
         <td style="width: 13%;"><img src="{{user.avatar(70)}}"></td>
         <td class="left" style="width: 100%">
         <table>
-            <tr valign="top"><td style="font-size: xx-large; color: #002a80;font-family: georgia, serif" ><b>{{user.nickname}}</b></td></tr>
+            <tr valign="top"><td class="profilenickname" ><b>{{user.nickname}}</b></td></tr>
             <tr>
                 <td>
-                    <p style="font-family: georgia, serif">
+                    <p class="profileuserdetail">
                         {% if user.about_me %}
                             Description: <i>{{ user.about_me }}</i><br>
                         {% endif %}
                         {% if user.last_seen %}
-                            Last seen on: <i style="font-size: smaller">{{ momentjs(user.last_seen).calendar() }}</i>
+                            Last seen on: <i class="posttime">{{ momentjs(user.last_seen).calendar() }}</i>
                         {% endif %}
                     <br>
                     <button type="button" onclick="togglefollowers()"  style="border-style: hidden;background-color: transparent">
@@ -44,8 +45,6 @@
                     </p>
                 </td>
             </tr>
-
-{#        insert followers#}
         </table>
         </td>
     </tr>
@@ -67,6 +66,24 @@
     </tr>
     </table>
 {#    <hr color=#988cb9 size="3">#}
+     <div>
+        <table width="100%">
+            <tr>
+                <td width="50%" class="align-left">
+                    {% if crtpage > 1 %}
+                    <a href="{{ url_for('user',email = user.email,page = crtpage - 1)}}">
+                        &lt;&lt;previous page
+                    </a>
+                    {% endif %}
+                </td>
+                <td width="50" class="align-right">
+                    {%  if crtpage < totalpages %}
+                    <a href="{{ url_for('user',email = user.email,page = crtpage + 1)}}">next page>></a>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </div>
 {% endblock %}
 {% block bodyright %}
     <br>
@@ -74,9 +91,9 @@
             <tr>
                 <th>
                     {% if user==g.user %}
-                    <h4 style="color: #149bdf;font-family: georgia, serif">My followeds</h4>
+                    <h4 class="rightparttitle">My followeds</h4>
                     {% else %}
-                    <h4 style="color: #149bdf;font-family: georgia, serif">{{ user.nickname }}'s followeds</h4>
+                    <h4 class="rightpartelems">{{ user.nickname }}'s followeds</h4>
                     {% endif %}
                 </th>
             </tr>

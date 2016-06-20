@@ -1,38 +1,31 @@
-
 <br>
-<script type="text/javascript">
-    function toggle(crtid) {
-        theObj=document.getElementById(crtid).style;
-        if (theObj.display=="none")
-            theObj.display="block";
-        else
-            theObj.display="none";
-    }
-</script>
 <table style="width: 95%">
     <tr valign="top" >
-        <td class="top-left" style="width: 12%;"><a href="{{ url_for('user',email=post.author.email) }}"><img src="{{post.author.avatar(64)}}"></a></td>
+        <td class="top-left" style="width: 64pt;"><a href="{{ url_for('user',email=post.author.email,page =1) }}"><img src="{{post.author.avatar(64)}}"></a></td>
         <td class="top-left">
-            <p style="font-family: georgia,Serif;text-align: justify"><a href="{{ url_for('user',email=post.author.email) }}"><b style="font-size: x-large">{{post.author.nickname}}</b></a>
+            <p class="postuserinfo"><a href="{{ url_for('user',email=post.author.email,page=1) }}"><b class="usernickname">{{post.author.nickname}}</b></a>
             <br><b>Label: </b>{{ post.title }}
             <br><b>Says: </b>{{ post.body }}
-            <br><i style="font-size: small;">@{{momentjs(post.timestamp).fromNow()}}</i>
+            <br><i class="posttime">@{{momentjs(post.timestamp).fromNow()}}</i>
             <a href="{{ url_for('like',postid=post.id)}}"><img src="/static/img/zan.png">
-            </a> +<button type="button" onclick="toggle({{ post.id }})" style="border-style: hidden;background-color: transparent" ><b>{{post.likes.count()}}</b></button>
-            <button onclick="toggle('c{{ post.id }}')" style="color: #0e90d2;font-size: 15px;font-family: georgia">Comment</button>
+            </a> +<button type="button" onclick="toggle({{ post.id }})" class="transpbutton" ><b>{{post.likes.count()}}</b></button>
+            <button onclick="toggle('c{{ post.id }}')" class="postbutton">Comment</button>
             {% if g.user==post.author %}
-                <a href="{{ url_for('delpost',postid=post.id)}}"><button style="font-family: georgia, serif;color: #0e90d2;font-size: 15px">Delete</button></a>
+                <a href="{{ url_for('delpost',postid=post.id)}}"><button class="postbutton">Delete</button></a>
             {% endif %}
             </p>
         </td>
     </tr>
+{#    <tr>#}
+{#        <td><hr style="color: #0e90d2"></td>#}
+{#    </tr>#}
     {% if post.likes.count()>0 %}
     <tr>
         <td></td>
         <td>
             <p id="{{ post.id }}" style="display: none">
                     {% for foo in post.OutLikers() %}
-                        <a href="{{ url_for('user',email=foo.email) }}">
+                        <a href="{{ url_for('user',email=foo.email,page =1) }}">
                             <img src="{{foo.avatar(28)}}"></a>
                     {% endfor %}
             </p>
@@ -47,13 +40,13 @@
         {% for cmt in post.comments.all() %}
                 <table style="width: 85%">
                     <tr>
-                        <td style="width: 10%;vertical-align: top"><a href="{{ url_for('user',email=cmt.byuser.email) }}">
+                        <td style="vertical-align: top;width:34pt;"><a href="{{ url_for('user',email=cmt.byuser.email,page = 1) }}">
                             <img src="{{cmt.byuser.avatar(32)}}"></a> :
                         </td>
-                        <td style="width: 90%;vertical-align: bottom">
-                            <p style="text-align: justify; font-size: small;font-family: georgia, serif" >{{ cmt.body }}
+                        <td>
+                            <p class="comment">{{ cmt.body }}
                                 <br>
-                                <i style="font-size: xx-small;">@{{ momentjs(cmt.timestamp).fromNow() }}</i>
+                                <i class="commenttime">@{{ momentjs(cmt.timestamp).fromNow() }}</i>
                             </p>
                         </td>
                     </tr>

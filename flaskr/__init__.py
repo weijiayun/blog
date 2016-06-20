@@ -21,9 +21,9 @@ lm.login_view='login'
 ################error############
 import errorlog
 errorlog.ErrorMail()
-#####blueprint registe###########
-from flaskr.postsviews import viewposts
-app.register_blueprint(viewposts)
+# #####blueprint registe###########
+# from flaskr.postsviews import viewposts
+# app.register_blueprint(viewposts)
 ##################################
 re_email_str=re.compile(r'([0-9a-zA-Z][0-9a-zA-Z._]{,15}[0-9a-zA-Z])@([0-9a-zA-Z.]+)$')
 re_password_str=re.compile(r'\w{6,16}')

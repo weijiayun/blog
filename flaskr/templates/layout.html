@@ -9,11 +9,11 @@
     <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-
+    <script src="/static/js/toggle.js"></script>
 </head>
 <body>
 <div class="page">
-    <h1 style="font-family: 'Lucida Grande'">{{ g.title }}</h1></br>
+    <h1 class="title">{{ g.title }}</h1>
     <table class="right">
         <tr>
             <td></td>
@@ -23,7 +23,7 @@
                     <table>
                         <tr valign="top">
                             <td><input type="text" name="search" style="height:27px" /></td>
-                            <td><button type="submit"style="height: 26px;;font-family: georgia" class="top">Search</button></td>
+                            <td><button type="submit" class="searchbutton">Search</button></td>
                         </tr>
                     </table>
                 </form>
@@ -35,15 +35,15 @@
         <td>
             {% if not session.logged_in %}
                 <b class="right">
-                <a href="{{ url_for('login') }}" style="text-decoration-line: none;font-family: georgia">Log in</a>
-                <a href="{{ url_for('signup') }}" style="text-decoration-line: none;font-family: georgia">Sign up</a>
+                <a href="{{ url_for('login') }}" class="layoutItems">Log in</a>
+                <a href="{{ url_for('signup') }}" class="layoutItems">Sign up</a>
                 </b>
             {% else %}
                 <b class="right">
-                    <a href="{{ url_for('index') }}" style="text-decoration-line: none;font-family: georgia">Feeds</a>
-                    <a href="{{ url_for('viewposts.add_post') }}" style="text-decoration-line: none;font-family: georgia">Status</a>
-                    <a href="{{ url_for('user',email=g.user.email) }}" style="text-decoration-line: none;font-family: georgia">Profile</a>
-                    <a href="{{ url_for('logout') }}" style="text-decoration-line: none;font-family: georgia">Logout</a>
+                    <a href="{{ url_for('index') }}" class="layoutItems">Feeds</a>
+                    <a  class="layoutItems" onclick="toggle('blogstatus')">Status</a>
+                    <a href="{{ url_for('user',email=g.user.email,page =1) }}" class="layoutItems">Profile</a>
+                    <a href="{{ url_for('logout') }}" class="layoutItems">Logout</a>
                 </b><br />
             {% endif %}
         </td>

@@ -49,19 +49,25 @@ def search_results(query):
                            )
 
 @app.route('/')
-@app.route('/home')
 @app.route('/index')
+@app.route('/index/<int:page>')
 @login_required
-def index():
+def index(page=1):
     g.search_form=SearchForm()
     if not session.get('logged_in'):
         return redirect(url_for('login'))
     g.title = "Microblog"#.format(g.user.nickname)
-    cur=g.user.followed_posts()
+    items_per_page = g.user.get_items_per_page()
+    totalpages = g.user.get_followed_posts_count()
+    totalpages = int((totalpages + items_per_page - 1) / items_per_page)
+    cur =g.user.get_followed_posts(page=page)
     return render_template('index.html',
                            posts=cur,
+                           totalpages = totalpages,
+                           crtpage = page,
                            providers=app.config['OPENID_PROVIDERS']
                            )
+
 @app.route('/login',methods=['GET','POST'])
 def login():
     g.title='Log In'
@@ -214,21 +220,27 @@ def unreject(email):
     flash('You have stoped following '+user.nickname)
     return redirect(url_for('user',email=email))
 
-@app.route('/user/<email>')
+@app.route('/user/<email>/<int:page>',methods=['GET','POST'])
 @login_required
-def user(email):
+def user(email,page = 1):
     u=models.User.query.filter_by(email=email).first()
     if u is None:
         flash('User {} is not found'.format(email))
         return redirect(url_for('index'))
-    cur = u.posts.order_by(models.Post.timestamp.desc()).all()
+
     if u==g.user:
         g.title='My profile'
     else:
         g.title=u.nickname+"'s profile"
+    items_per_page = g.user.get_items_per_page()
+    totalpages = u.posts.count()
+    totalpages = int((totalpages + items_per_page - 1) / items_per_page)
+    cur = u.posts.order_by(models.Post.timestamp.desc()).offset((page-1)*items_per_page).limit(items_per_page).all()
     return render_template('user.html',
         user = u,
         posts = cur,
+        crtpage = page,
+        totalpages = totalpages,
         providers=app.config['OPENID_PROVIDERS'])
 
 @app.route('/edit',methods=['GET','POST'])
@@ -238,6 +250,7 @@ def edit():
     if form.validate_on_submit():
         g.user.nickname=form.nickname.data
         g.user.about_me=form.about_me.data
+        g.user.items_per_page = form.items_per_page.data
         db.session.add(g.user)
         db.session.commit()
         flash('Your changes have been saved.')
@@ -303,6 +316,22 @@ def like(postid):
         db.session.add(lk)
     db.session.commit()
     return redirect(request.referrer)
+@app.route('/add',methods=['GET','POST'])
+def add_post():
+    g.title='New status'
+    if request.method=='POST':
+        if len(request.form['title'])==0 or len(request.form['text'])==0:
+            flash('Title and text cannot be empty!!!')
+            return redirect(request.referrer)
+        uid=session.get('crtUser')
+        u=models.User.query.get(uid)
+        p=models.Post(title=request.form['title'],body=request.form['text'],timestamp=datetime.utcnow(),author=u)
+        db.session.add(p)
+        db.session.commit()
+        flash('New entry was successfully posted')
+        return redirect(request.referrer)
+    return render_template('index.html',
+                           providers=app.config['OPENID_PROVIDERS'])
 # @app.route('/likers/<postid>')
 # @login_required
 # def likers(postid):

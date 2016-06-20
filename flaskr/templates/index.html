@@ -2,10 +2,39 @@
 {% block body %}
     <br>
     {% if session.logged_in %}
+        <form action="{{ url_for('add_post') }}" method="post" id="blogstatus" style="display: none" class="center">
+            <table>
+                <tr><td><br>Title:</td></tr>
+                <tr><td><input type="text" name="title" maxlength="60" style="height: 30px;width: 300px"></td></tr>
+                <tr><td>Status:</td></tr>
+                <tr>
+                    <td><textarea name="text" rows="5" style="width:400px" maxlength="500" ></textarea></td>
+                </tr>
+                <tr><td><button type="submit" onclick="toggle('blogstatus')">Share</button></td></tr>
+            </table>
+        </form>
             {% for post in posts %}
                 {% include 'post.html' %}
             {% else %}
                 <em>Unbelievable. No entries so far here</em>
             {% endfor %}
+        <div>
+        <table width="100%">
+            <tr>
+                <td width="50%" class="align-left">
+                    {% if crtpage > 1 %}
+                    <a href="{{ url_for('index',page = crtpage - 1)}}">
+                        &lt;&lt;previous page
+                    </a>
+                    {% endif %}
+                </td>
+                <td width="50" class="align-right">
+                    {%  if crtpage < totalpages %}
+                    <a href="{{ url_for('index',page = crtpage + 1)}}">next page>></a>
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </div>
     {% endif %}
 {% endblock %}
