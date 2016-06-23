@@ -41,10 +41,10 @@
                 <table style="width: 85%">
                     <tr>
                         <td style="vertical-align: top;width:34pt;"><a href="{{ url_for('user',email=cmt.byuser.email,page = 1) }}">
-                            <img src="{{cmt.byuser.avatar(32)}}"></a> :
+                            <img src="{{cmt.byuser.avatar(32)}}"></a>
                         </td>
                         <td>
-                            <p class="comment">{{ cmt.body }}
+                            <p class="comment" >:{{ cmt.body }}
                                 <br>
                                 <i class="commenttime">@{{ momentjs(cmt.timestamp).fromNow() }}</i>
                             </p>

@@ -19,7 +19,7 @@
                         {% endif %}
                     <br>
                     <button type="button" onclick="togglefollowers()"  style="border-style: hidden;background-color: transparent">
-                        <b>{{ user.cntFollowers() }} followers</b></button>
+                        <b style="color: white">{{ user.cntFollowers() }} followers</b></button>
                     {% if user.id == g.user.id %}
                         <a href="{{url_for('edit')}}" style="text-decoration-line: none">Edit</a>
                     {% elif not g.user.is_following(user) %}

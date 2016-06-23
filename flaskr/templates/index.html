@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% block body %}
     <br>
+    <div class="index">
     {% if session.logged_in %}
         {% include 'status.html' %}
             {% for post in posts %}
@@ -9,22 +10,23 @@
                 <em>Unbelievable. No entries so far here</em>
             {% endfor %}
         <div>
-        <table width="100%">
+        <table width="95%">
             <tr>
-                <td width="50%" class="align-left">
+                <td width="50%" style="text-align: left">
                     {% if crtpage > 1 %}
                     <a href="{{ url_for('index',page = crtpage - 1)}}">
                         &lt;&lt;previous page
                     </a>
                     {% endif %}
                 </td>
-                <td width="50" class="align-right">
+                <td width="50%" style="text-align: right">
                     {%  if crtpage < totalpages %}
                     <a href="{{ url_for('index',page = crtpage + 1)}}">next page>></a>
                     {% endif %}
                 </td>
             </tr>
         </table>
+        </div>
         </div>
     {% endif %}
 {% endblock %}

@@ -5,6 +5,12 @@
     {{ form.hidden_tag() }}
     <table>
         <tr>
+            <td>Your Profile</td>
+            <td>
+                <input type="file" name="fileToUpload">
+            </td>
+        </tr>
+        <tr>
             <td>Your nickname:</td>
             <td>{{ form.nickname(size=24) }}</td>
         </tr>

@@ -1,32 +1,14 @@
 {% extends 'layout.html' %}
 {% block body %}
-    {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
-    {% endif %}
-    <form action="{{ url_for('login') }}" method="post" class="entries">
-        {{ form.hidden_tag() }}
-        <table>
-            <tr>
-                <td><b>Your email:</b></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="email" style="height: 27px;" placeholder="your email"required/></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><b>Your password:</b></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="password" name="password" style="height: 27px" placeholder="your password"required/></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>{{ form.remember_me }} Remeber Me</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><button type="submit"  style="color: #0e90d2">Login</button></td>
-            </tr>
-        </table>
-    </form>
+<div class="login">
+        {% if error %}<p class="error"><strong>Error:</strong>{{ error }}
+        {% endif %}
+        <form action="{{ url_for('login') }}" method="post" id="loginform">
+            {{ form.hidden_tag() }}
+                <h1>Login</h1>
+                <input type="text"class="btn-block btn " name="email"  placeholder="your email" required="required">
+                <input type="password" name="password" class="btn-block btn" placeholder="your password" required="required">
+                <button type="submit" class="btn btn-primary btn-large btn-block" value="login">Login</button>
+        </form>
+</div>
 {% endblock %}
