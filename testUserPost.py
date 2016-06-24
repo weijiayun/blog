@@ -39,7 +39,10 @@ from flaskr import db
 # msg.html='<b>HTML</b> body'
 # with app.app_context():
 #     mail.send(msg)
-#
+
+import cv
+
+
 
 
 

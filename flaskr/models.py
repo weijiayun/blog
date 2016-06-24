@@ -3,6 +3,7 @@ from flaskr import db
 from hashlib import md5
 import sys
 from flaskr import app
+from imageprocess import reduce
 if sys.version_info>=(3,0):
     enable_search=False
 else:
@@ -27,6 +28,8 @@ class User(db.Model):
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
     items_per_page = db.Column(db.Integer,default=4)
+    avatarPath = db.Column(db.String(140),
+                           default='/home/weijiayun/PycharmProjects/blog/flaskr/static/useravatar/lena.png')
 
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     comments = db.relationship('Comment', backref='byuser', lazy='dynamic')
@@ -47,7 +50,7 @@ class User(db.Model):
         return self.items_per_page
 
     def avatar(self,size):
-        return 'http://www.gravatar.com/avatar/' + md5(self.email).hexdigest() + '?d=mm&s=' + str(size)
+        return reduce(self.id,self.avatarPath,size,size)[0]
 
     def is_authenticated(self):
         return True

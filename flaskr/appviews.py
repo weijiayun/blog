@@ -1,6 +1,5 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
-import re
-from forms import EditForm
+import re,os
 from flask import redirect,request,\
     session,url_for,g,abort,render_template,flash
 from flaskr import models,db,app,re_email_str,re_number,re_password_str,re_uppercase
@@ -9,6 +8,7 @@ from .forms import LoginForm,SearchForm
 from flask.ext.login import current_user,login_user,login_required
 from datetime import datetime
 from email import follow_notification
+
 def uniqueMail(newemail):
     user=models.User.query.filter_by(email=newemail).first()
     if user!=None:
@@ -94,6 +94,7 @@ def login():
                 remember_me = form.remember_me.data
                 login_user(user,remember=remember_me)
                 flash('You were logged in successfully')
+                g.crtpage=1
                 return redirect(url_for('index'))
     return render_template('login.html',
                            error=error,
@@ -248,14 +249,23 @@ def user(email,page = 1):
 @login_required
 def edit():
     if request.method == 'POST':
-        g.user.profile = request.form['profile']
+        pic = request.files['avatarpic']
+        picpath = app.config['USER_PIC_FOLDER']
+        #sufix = request.form['avatarpic'].split('.')[1]
+        sufix = 'png'
+        filename =str(g.user.id)+'/'+str(g.user.id)+'.'+sufix
+        g.user.avatarPath = os.path.join(picpath,filename)
+        if not os.path.exists(os.path.dirname(g.user.avatarPath)):
+            os.mkdir(os.path.dirname(g.user.avatarPath))
+        pic.save(g.user.avatarPath)
         g.user.nickname=request.form['nickname']
         g.user.about_me=request.form['about_me']
         g.user.items_per_page = request.form['items_per_page']
         db.session.add(g.user)
         db.session.commit()
         flash('Your changes have been saved.')
-        return redirect(url_for('user',email=g.user.email,page = g.crtpage))
+        return redirect(request.referrer)
+        #return redirect(url_for('user', email=g.user.email, page=g.crtpage))
     return render_template('edit.html',providers=app.config['OPENID_PROVIDERS'])
 
 @app.route('/delelte/<postid>')

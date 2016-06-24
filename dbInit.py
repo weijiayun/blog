@@ -2,4 +2,4 @@
 from db_create import dbcreate
 from db_migrate import dbmigrate
 dbcreate()
-#dbmigrate()
+dbmigrate()
