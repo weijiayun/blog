@@ -6,8 +6,8 @@
         <form action="{{ url_for('login') }}" method="post" id="loginform">
             {{ form.hidden_tag() }}
                 <h1>Login</h1>
-                <input type="text"class="btn-block btn " name="email"  placeholder="your email" required="required">
-                <input type="password" name="password" class="btn-block btn" placeholder="your password" required="required">
+                <input type="text" style="height: 30px;" class="btn-block btn" name="email"  placeholder="your email" required="required">
+                <input type="password"  style="height: 30px;"name="password" class="btn-block btn" placeholder="your password" required="required">
                 <button type="submit" class="btn btn-primary btn-large btn-block" value="login">Login</button>
         </form>
 </div>

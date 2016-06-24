@@ -1,13 +1,13 @@
 <br>
 <table style="width: 95%">
     <tr valign="top" >
-        <td class="top-left" style="width: 64pt;"><a href="{{ url_for('user',email=post.author.email,page =1) }}"><img src="{{post.author.avatar(64)}}"></a></td>
+        <td class="top-left" style="width: 64pt;"><a href="{{ url_for('user',email=post.author.email,page =1) }}"><img src="{{post.author.avatar(64)}}" style="border-radius: 50%"></a></td>
         <td class="top-left">
             <p class="postuserinfo"><a href="{{ url_for('user',email=post.author.email,page=1) }}"><b class="usernickname">{{post.author.nickname}}</b></a>
             <br><b>Label: </b>{{ post.title }}
             <br><b>Says: </b>{{ post.body }}
             <br><i class="posttime">@{{momentjs(post.timestamp).fromNow()}}</i>
-            <a href="{{ url_for('like',postid=post.id)}}"><img src="/static/img/zan.png">
+            <a href="{{ url_for('like',postid=post.id)}}"><img src="/static/img/zan.png" style="border-radius: 20%">
             </a> +<button type="button" onclick="toggle({{ post.id }})" class="transpbutton" ><b>{{post.likes.count()}}</b></button>
             <button onclick="toggle('c{{ post.id }}')" class="postbutton">Comment</button>
             {% if g.user==post.author %}
@@ -26,7 +26,7 @@
             <p id="{{ post.id }}" style="display: none">
                     {% for foo in post.OutLikers() %}
                         <a href="{{ url_for('user',email=foo.email,page =1) }}">
-                            <img src="{{foo.avatar(28)}}"></a>
+                            <img src="{{foo.avatar(28)}}" style="border-radius: 50%"></a>
                     {% endfor %}
             </p>
         </td>
@@ -41,7 +41,7 @@
                 <table style="width: 85%">
                     <tr>
                         <td style="vertical-align: top;width:34pt;"><a href="{{ url_for('user',email=cmt.byuser.email,page = 1) }}">
-                            <img src="{{cmt.byuser.avatar(32)}}"></a>
+                            <img src="{{cmt.byuser.avatar(32)}}"style="border-radius: 50%"></a>
                         </td>
                         <td>
                             <p class="comment" >:{{ cmt.body }}

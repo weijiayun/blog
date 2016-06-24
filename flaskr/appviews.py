@@ -247,21 +247,17 @@ def user(email,page = 1):
 @app.route('/edit',methods=['GET','POST'])
 @login_required
 def edit():
-    form=EditForm()
-    if form.validate_on_submit():
-        g.user.nickname=form.nickname.data
-        g.user.about_me=form.about_me.data
-        g.user.items_per_page = form.items_per_page.data
+    if request.method == 'POST':
+        g.user.profile = request.form['profile']
+        g.user.nickname=request.form['nickname']
+        g.user.about_me=request.form['about_me']
+        g.user.items_per_page = request.form['items_per_page']
         db.session.add(g.user)
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('user',email=g.user.email,page = g.crtpage))
-    else:
-        form.nickname.data=g.user.nickname
-        form.about_me.data=g.user.about_me
-    return render_template('edit.html',
-                           form=form,
-                           providers=app.config['OPENID_PROVIDERS'])
+    return render_template('edit.html',providers=app.config['OPENID_PROVIDERS'])
+
 @app.route('/delelte/<postid>')
 @login_required
 def delpost(postid):
@@ -333,15 +329,6 @@ def add_post():
         return redirect(request.referrer)
     return render_template('index.html',
                            providers=app.config['OPENID_PROVIDERS'])
-# @app.route('/likers/<postid>')
-# @login_required
-# def likers(postid):
-#     post = models.Post.query.get(postid)
-#     if post is None:
-#         flash('Post {} not found'.format(post.title))
-#         return redirect(request.referrer)
-#
-#     return redirect(request.referrer)
 
 #############custom http error######################
 @app.errorhandler(404)

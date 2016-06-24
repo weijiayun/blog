@@ -1,10 +1,11 @@
 {% extends 'layout.html' %}
 {% block body %}
     <br>
+    <div class="index">
     {% include 'status.html' %}
     <table class="center" style="width: 100%">
     <tr valign="top">
-        <td style="width: 13%;"><img src="{{user.avatar(70)}}"></td>
+        <td style="width: 15%;"><img src="{{user.avatar(80)}}"style="border-radius: 50%"></td>
         <td class="left" style="width: 100%">
         <table>
             <tr valign="top"><td class="profilenickname" ><b>{{user.nickname}}</b></td></tr>
@@ -93,4 +94,5 @@
             </tr>
             {% endif %}
     </table>
+    </div>
 {% endblock %}
