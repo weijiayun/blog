@@ -5,7 +5,6 @@ def reduce(id,imagepath,sizew,sizeh):
     iReduce = ""
     try:
         dirname = os.path.dirname(imagepath)
-        print imagepath
         basename = os.path.basename(imagepath).split('.')[0]
         version = os.path.basename(imagepath).split('.')[1]
         sufix = os.path.basename(imagepath).split('.')[2]

@@ -251,7 +251,9 @@ def user(email,page = 1):
 def edit():
     if request.method == 'POST':
         pic = request.files['avatarpic']
-        picpath = app.config['USER_PIC_FOLDER']
+        picpath = os.path.abspath(__name__)
+        picpath = os.path.join(os.path.dirname(picpath),'flaskr/static/useravatar')
+        print picpath
         sufix = pic.filename.split('.')[-1]
         #sufix ='png'
         dirname = picpath+'/'+str(g.user.id)

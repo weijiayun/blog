@@ -1,7 +1,8 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-USER_PIC_FOLDER = '/home/weijiayun/PycharmProjects/blog/flaskr/static/useravatar'
+
+
 CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 WHOOSH_BASE=os.path.join(basedir,'search.db')
