@@ -49,8 +49,13 @@
     </tr>
 </table>
 <br><br><br><br><br>
+<script type="text/javascript">
+    setTimeout(function(){
+        document.getElementById('flashobj').style.display="none";
+    },2000);
+</script>
 {% for message in get_flashed_messages() %}
-   <div class="flash"><p>{{ message }}</p></div>
+   <div class="flash" id="flashobj"><p style="text-align: center">{{ message }}</p></div>
 {% endfor %}
 <table width="100%">
 <tr>

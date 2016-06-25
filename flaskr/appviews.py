@@ -1,5 +1,6 @@
 #!/opt/Apps/local/Python/anaconda/bin/python2.7
-import re,os
+
+import re,os,shutil
 from flask import redirect,request,\
     session,url_for,g,abort,render_template,flash
 from flaskr import models,db,app,re_email_str,re_number,re_password_str,re_uppercase
@@ -74,6 +75,7 @@ def login():
     error = None
     form=LoginForm()
     remember_me=False
+    g.crtpage = 1
     if request.method == 'POST':
         cur=models.User.query.all()
         usersInfo = [dict(useremail=user.email, password=user.password,ID=int(user.get_id())) for user in cur]
@@ -93,8 +95,7 @@ def login():
                 session['logged_in']=True
                 remember_me = form.remember_me.data
                 login_user(user,remember=remember_me)
-                flash('You were logged in successfully')
-                g.crtpage=1
+
                 return redirect(url_for('index'))
     return render_template('login.html',
                            error=error,
@@ -251,10 +252,23 @@ def edit():
     if request.method == 'POST':
         pic = request.files['avatarpic']
         picpath = app.config['USER_PIC_FOLDER']
-        #sufix = request.form['avatarpic'].split('.')[1]
-        sufix = 'png'
-        filename =str(g.user.id)+'/'+str(g.user.id)+'.'+sufix
-        g.user.avatarPath = os.path.join(picpath,filename)
+        sufix = pic.filename.split('.')[-1]
+        #sufix ='png'
+        dirname = picpath+'/'+str(g.user.id)
+        version = "1"
+        if os.path.exists(dirname) and os.path.isdir(dirname):
+            filelist = os.listdir(dirname)
+            for f in filelist:
+                if len(f.split('.')) == 3:
+                    version = f.split('.')[1]
+                    version =str(int(version)+1)
+                    break
+                else:
+                    version = '1'
+        filename = str(g.user.id) + '/' + str(g.user.id) + '.' + version + '.' + sufix
+        g.user.avatarPath = os.path.join(picpath, filename)
+        if os.path.exists(os.path.dirname(g.user.avatarPath)):
+            shutil.rmtree(os.path.dirname(g.user.avatarPath))
         if not os.path.exists(os.path.dirname(g.user.avatarPath)):
             os.mkdir(os.path.dirname(g.user.avatarPath))
         pic.save(g.user.avatarPath)
@@ -264,8 +278,8 @@ def edit():
         db.session.add(g.user)
         db.session.commit()
         flash('Your changes have been saved.')
-        return redirect(request.referrer)
-        #return redirect(url_for('user', email=g.user.email, page=g.crtpage))
+        g.crtpage = 1
+        return redirect(url_for('user', email=g.user.email, page=g.crtpage))
     return render_template('edit.html',providers=app.config['OPENID_PROVIDERS'])
 
 @app.route('/delelte/<postid>')

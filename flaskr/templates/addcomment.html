@@ -1,5 +1,5 @@
-<form action="{{ url_for('.addcomment',postid=post.id) }}" method="post" >
-    Comment:<br/>
+<form action="{{ url_for('.addcomment',postid=post.id) }}" method="post" xmlns="http://www.w3.org/1999/html">
+   <div style="color: white"> Comment:</div>
     <textarea name="comment" rows="4" maxlength="340" style="width: 300px"></textarea><br/>
     <button type="submit" onclick="toggle('c{{ post.id }}')">Share</button>
 </form>
